@@ -2,19 +2,21 @@ import React from 'react'
 import ReactDOM from 'react-dom/client'
 import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 import './index.css'
-import About from './pages/About'
-import Home from './pages/Home'
+import Events from './pages/Events'
+import HomePage from './pages/Home'
 import Products from './pages/Products'
 import Root from './pages/Root'
+import Newsletter from './pages/Newsletter'
 
 const router = createBrowserRouter([
   {
     path: '/',
     element: <Root />,
     children: [
-      { index: true, element: <Home /> },
+      { index: true, element: <HomePage /> },
       { path: 'products', element: <Products /> },
-      { path: 'about', element: <About /> },
+      { path: 'events', element: <Events /> },
+      { path: 'newsletter', element: <Newsletter /> },
     ],
   },
 ])

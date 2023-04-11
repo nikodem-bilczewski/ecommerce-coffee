@@ -1,4 +1,4 @@
-function Products() {
+const Products = () => {
   return <div>Products</div>
 }
 

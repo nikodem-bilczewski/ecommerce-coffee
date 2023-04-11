@@ -1,10 +1,10 @@
 import { NavLink } from 'react-router-dom'
 
-function MainNavigation() {
+const MainNavigation = () => {
   return (
-    <header className=' bg-slate-300'>
-      <nav className='flex h-24 w-full items-center justify-between bg-slate-100 px-7'>
-        <h1 className='text-3xl'>COFFEE SHOP</h1>
+    <header className='bg-stone-300'>
+      <nav className='mx-auto flex h-24 w-full items-center justify-between bg-stone-300 px-7 xl:w-4/5 xl:p-0'>
+        <h1 className='text-2xl lg:text-3xl'>COFFEE HUB</h1>
         <ul className='flex justify-center'>
           <li>
             <NavLink to='' className='nav-link hover:bg-opacity-10'>
@@ -17,8 +17,13 @@ function MainNavigation() {
             </NavLink>
           </li>
           <li>
-            <NavLink to='about' className='nav-link hover:bg-opacity-10'>
-              About
+            <NavLink to='events' className='nav-link hover:bg-opacity-10'>
+              Events
+            </NavLink>
+          </li>
+          <li>
+            <NavLink to='newsletter' className='nav-link hidden hover:bg-opacity-10 md:inline'>
+              Newsletter
             </NavLink>
           </li>
         </ul>

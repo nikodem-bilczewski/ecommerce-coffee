@@ -4,7 +4,7 @@
 
 @layer components {
   .nav-link {
-    @apply mx-1 rounded-md bg-black bg-opacity-0 px-4 py-2 text-2xl transition;
+    @apply mx-1 rounded-md bg-black bg-opacity-0  px-4 py-2 text-lg transition sm:text-xl md:text-2xl;
   }
 }
 
@@ -22,4 +22,7 @@ html {
 
 body {
   font-family: 'Poppins', 'sans-serif';
+  min-height: 100dvh;
+  min-height: 100vh;
+  background-color: rgb(214 211 209);
 }
