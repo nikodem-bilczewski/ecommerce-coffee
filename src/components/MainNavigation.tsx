@@ -2,8 +2,8 @@ import { NavLink } from 'react-router-dom'
 
 const MainNavigation = () => {
   return (
-    <header className='bg-stone-300'>
-      <nav className='mx-auto flex h-24 w-full items-center justify-between bg-stone-300 px-7 xl:w-4/5 xl:p-0'>
+    <header className='bg-slate-300'>
+      <nav className='mx-auto flex h-24 w-full items-center justify-between border-b border-b-gray-400 bg-slate-300 px-7 xl:w-4/5 xl:p-0'>
         <h1 className='text-2xl lg:text-3xl'>COFFEE HUB</h1>
         <ul className='flex justify-center'>
           <li>
