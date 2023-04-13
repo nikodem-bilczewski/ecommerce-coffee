@@ -2,8 +2,8 @@ import React from 'react'
 
 const Footer = () => {
   return (
-    <footer className='w-full bg-slate-300 '>
-      <div className='mx-auto mb-10 grid w-full place-items-center border-t border-t-gray-400 px-5 pt-10 text-center text-xl md:mb-16 md:grid-cols-2 xl:w-4/5'>
+    <footer className='w-full bg-stone-400 '>
+      <div className='mx-auto mb-10 grid w-full place-items-center border-t border-t-gray-500 px-5 pt-10 text-center text-xl md:mb-16 md:grid-cols-2 xl:w-4/5'>
         <div className='mb-8'>
           <h1 className='mb-4 text-4xl lg:text-5xl'>COFFEE HUB</h1>
           <div className='flex items-center gap-3'>
