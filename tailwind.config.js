@@ -6,6 +6,9 @@ export default {
       fontFamily: {
         poppins: ['Poppins', 'sans-serif'],
       },
+      gridTemplateColumns: {
+        repeat: 'repeat(auto-fit, minmax(min(28rem, 100%), 1fr))',
+      },
     },
   },
   plugins: [],

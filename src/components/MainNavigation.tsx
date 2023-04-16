@@ -4,7 +4,7 @@ const MainNavigation = () => {
   return (
     <header className='bg-stone-400'>
       <nav className='mx-auto flex h-24 w-full items-center justify-between border-b border-b-gray-500 bg-stone-400 px-7 xl:w-4/5 xl:p-0'>
-        <h1 className='text-2xl lg:text-3xl'>COFFEE HUB</h1>
+        <h1 className='text-2xl lg:text-3xl xl:text-4xl'>COFFEE HUB</h1>
         <ul className='flex justify-center'>
           <li>
             <NavLink to='' className='nav-link hover:bg-opacity-10'>
