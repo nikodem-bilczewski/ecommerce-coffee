@@ -4,7 +4,7 @@ import Footer from '../components/Footer'
 
 const Root = () => {
   return (
-    <div className='flex h-screen w-full flex-col justify-between'>
+    <div className='flex min-h-screen w-full flex-col justify-between'>
       <MainNavigation />
       <main>
         <Outlet />

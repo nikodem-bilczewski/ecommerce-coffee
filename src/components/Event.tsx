@@ -1,5 +1,5 @@
 import Card from './Card'
-import { CoffeeEvent } from '../types/ComponentTypes'
+import { CoffeeEvent } from '../types/EventComponentTypes'
 
 const Event = ({ heading, description, image, date }: CoffeeEvent) => {
   return (

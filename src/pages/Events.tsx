@@ -2,7 +2,7 @@ import { useState } from 'react'
 import Event from '../components/Event'
 import cuppingImg from '../assets/images/cupping.jpg'
 import baristaImg from '../assets/images/barista.jpg'
-import { CoffeeEvent } from '../types/ComponentTypes'
+import { CoffeeEvent } from '../types/EventComponentTypes'
 
 const Events = () => {
   const [coffeeEvents, setCoffeeEvents] = useState<CoffeeEvent[]>([

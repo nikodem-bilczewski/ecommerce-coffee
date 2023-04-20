@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom'
-import { CardProps } from '../types/ComponentTypes'
+import { CardProps } from '../types/PropTypes'
 
 const Card = ({ src, heading, btnText, path }: CardProps) => {
   return (
