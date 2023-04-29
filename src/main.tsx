@@ -1,23 +1,25 @@
-import { QueryClientProvider, QueryClient } from '@tanstack/react-query'
 import React from 'react'
 import ReactDOM from 'react-dom/client'
+import { QueryClientProvider, QueryClient } from '@tanstack/react-query'
 import { createBrowserRouter, RouterProvider } from 'react-router-dom'
-import './index.css'
-import Events from './pages/Events'
-import HomePage from './pages/Home'
-import Products from './pages/Products'
-import Root from './pages/Root'
-import Newsletter from './pages/Newsletter'
+import 'index.css'
+import Layout from 'components/pages/Layout'
+import Home from 'components/pages/Home'
+import Products from 'components/pages/Products'
+import ProductDetails from 'components/organisms/ProductDetails'
+import Events from 'components/pages/Events'
+import Newsletter from 'components/pages/Newsletter'
 
 const queryClient = new QueryClient()
 
 const router = createBrowserRouter([
   {
     path: '/',
-    element: <Root />,
+    element: <Layout />,
     children: [
-      { index: true, element: <HomePage /> },
+      { index: true, element: <Home /> },
       { path: 'products', element: <Products /> },
+      { path: 'products/:productName', element: <ProductDetails /> },
       { path: 'events', element: <Events /> },
       { path: 'newsletter', element: <Newsletter /> },
     ],

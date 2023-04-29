@@ -1,9 +1,8 @@
 import { useState } from 'react'
 import { useQuery } from '@tanstack/react-query'
-import Product from '../components/Product'
-import PaginationButton from '../components/UI/PaginationButton'
-import { ProductType } from '../types/ProductTypes'
-import { getProducts } from '../utils/getProducts'
+import Product from 'components/organisms/Product'
+import { ProductType } from 'types/ProductTypes'
+import { getProducts } from 'utils/getProducts'
 
 const Products = () => {
   const [page, setPage] = useState(1)
@@ -14,9 +13,9 @@ const Products = () => {
     keepPreviousData: true,
   })
 
-  const products = data?.data.list as ProductType[]
+  const products = data?.data.list
 
-  const totalPages = data?.data.meta.pages as number
+  const totalPages = data?.data.meta.pages
 
   const onSetPage = (index: number): void => {
     if (page !== index + 1) {
@@ -51,11 +50,11 @@ const Products = () => {
         ))}
       </div>
       <div>
-        {Array.from({ length: totalPages }).map((_, i) => (
+        {/* {Array.from({ length: totalPages }).map((_, i) => (
           <PaginationButton key={i} onClickHandler={() => onSetPage(i)}>
             {i + 1}
           </PaginationButton>
-        ))}
+        ))} */}
       </div>
     </section>
   )

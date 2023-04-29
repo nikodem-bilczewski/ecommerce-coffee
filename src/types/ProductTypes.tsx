@@ -24,7 +24,9 @@ type queryData = {
 }
 
 export type ProductResponse = {
-  list: ProductType[]
-  meta: metaData
-  query: queryData
+  data: {
+    list: ProductType[]
+    meta: metaData
+    query: queryData
+  }
 }

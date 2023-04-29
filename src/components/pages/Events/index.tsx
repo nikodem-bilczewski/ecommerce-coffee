@@ -1,8 +1,8 @@
 import { useState } from 'react'
-import Event from '../components/Event'
-import cuppingImg from '../assets/images/cupping.jpg'
-import baristaImg from '../assets/images/barista.jpg'
-import { CoffeeEvent } from '../types/EventComponentTypes'
+import Event from 'components/organisms/Event/index'
+import cuppingImg from 'assets/images/cupping.jpg'
+import baristaImg from 'assets/images/barista.jpg'
+import { CoffeeEvent } from 'components/organisms/Event/CoffeeEvent.type'
 
 const Events = () => {
   const [coffeeEvents, setCoffeeEvents] = useState<CoffeeEvent[]>([
@@ -24,13 +24,13 @@ const Events = () => {
   return (
     <div className='m-16 mx-auto grid grid-cols-1 place-content-center gap-14 lg:grid-cols-2'>
       {coffeeEvents &&
-        coffeeEvents.map((event) => (
+        coffeeEvents.map(({ heading, description, image, date }) => (
           <Event
-            key={event.heading}
-            heading={event.heading}
-            description={event.description}
-            image={event.image}
-            date={event.date}
+            key={heading}
+            heading={heading}
+            description={description}
+            image={image}
+            date={date}
           />
         ))}
     </div>
