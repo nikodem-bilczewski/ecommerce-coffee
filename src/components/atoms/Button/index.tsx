@@ -1,14 +1,7 @@
-import { ReactNode } from 'react'
 import classNames from 'classnames'
+import { ButtonProps } from 'components/atoms/Button/Button.types'
 
-type ButtonProp = {
-  children: ReactNode
-  cartButton?: boolean
-  primary?: boolean
-  secondary?: boolean
-}
-
-const Button = ({ children, primary, secondary, cartButton }: ButtonProp) => {
+const Button = ({ children, primary, secondary, cartButton }: ButtonProps) => {
   const classes = classNames(
     'rounded-md transition-all',
     {

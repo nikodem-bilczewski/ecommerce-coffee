@@ -6,7 +6,7 @@ import 'index.css'
 import Layout from 'components/pages/Layout'
 import Home from 'components/pages/Home'
 import Products from 'components/pages/Products'
-import ProductDetails from 'components/organisms/ProductDetails'
+import ProductDetails from 'components/pages/ProductDetails'
 import Events from 'components/pages/Events'
 import Newsletter from 'components/pages/Newsletter'
 

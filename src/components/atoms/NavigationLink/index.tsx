@@ -1,10 +1,5 @@
-import { ReactNode } from 'react'
 import { NavLink } from 'react-router-dom'
-
-type NavigationLinkProps = {
-  children: ReactNode
-  navigateTo: string
-}
+import { NavigationLinkProps } from 'components/atoms/NavigationLink/NavigationLink.types'
 
 const NavigationLink = ({ navigateTo, children }: NavigationLinkProps) => (
   <NavLink to={navigateTo} className='nav-link hover:bg-opacity-10'>
