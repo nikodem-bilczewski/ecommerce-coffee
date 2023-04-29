@@ -1,4 +1,5 @@
 import { ProductPropType } from 'components/organisms/Product/Product.types'
+import Button from 'components/atoms/Button'
 
 const Product = ({ name, image, price, currency }: ProductPropType) => (
   <div className='grid gap-2 rounded-lg bg-stone-200 p-5 shadow-xl'>
@@ -10,9 +11,7 @@ const Product = ({ name, image, price, currency }: ProductPropType) => (
     <p className='mb-1 text-2xl font-light'>
       {price} {currency}
     </p>
-    <button className='w-full rounded-md bg-lime-700 py-3 text-2xl text-white transition-all hover:bg-opacity-80'>
-      Add to cart
-    </button>
+    <Button cartButton>Add to cart</Button>
   </div>
 )
 

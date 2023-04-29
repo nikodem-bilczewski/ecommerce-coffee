@@ -3,6 +3,7 @@ import image1 from 'assets/images/drip.jpg'
 import image2 from 'assets/images/cups.jpg'
 import Card from 'components/molecules/Card/index'
 import ShopDetails from 'components/organisms/ShopDetails'
+import Button from 'components/atoms/Button'
 
 const Home = () => (
   <main className='mx-auto flex min-h-screen w-4/5 flex-col justify-evenly text-center'>
@@ -27,11 +28,8 @@ const Home = () => (
         <h2 className='mb-10 text-3xl font-extralight xl:text-4xl'>
           Browse our shop to discover our wide range of coffee brands and blends.
         </h2>
-        <Link
-          to='products'
-          className='nav-link bg-opacity-20 hover:bg-opacity-30 lg:text-3xl lg:font-light'
-        >
-          Shop Now
+        <Link to='products'>
+          <Button secondary>Shop Now</Button>
         </Link>
       </div>
     </section>
