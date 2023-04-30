@@ -1,28 +1,10 @@
-import { useState } from 'react'
-import { useQuery } from '@tanstack/react-query'
 import Product from 'components/organisms/Product'
-import { ProductType } from 'types/ProductTypes'
-import { getProducts } from 'utils/getProducts'
+import PaginationButtons from 'components/molecules/PaginationButtons'
+import useProducts from 'components/pages/Products/useProducts'
+import { ProductType } from 'components/pages/Products/Products.types'
 
 const Products = () => {
-  const [page, setPage] = useState(1)
-
-  const { isLoading, isError, data } = useQuery({
-    queryKey: ['products', page],
-    queryFn: () => getProducts(page),
-    keepPreviousData: true,
-  })
-
-  const products = data?.data.list
-
-  const totalPages = data?.data.meta.pages
-
-  const onSetPage = (index: number): void => {
-    if (page !== index + 1) {
-      setPage(index + 1)
-      window.scrollTo({ top: 0, behavior: 'smooth' })
-    }
-  }
+  const { isLoading, isError, products, totalPages, onPageChange } = useProducts()
 
   if (isLoading) {
     return <h2 className='text-center text-2xl'>Loading...</h2>
@@ -39,23 +21,11 @@ const Products = () => {
         <span className='mb-5 h-1 w-full border-b border-gray-400'></span>
       </div>
       <div className='mx-auto grid w-full grid-cols-repeat place-items-center gap-10'>
-        {products?.map((product: ProductType) => (
-          <Product
-            key={product.name}
-            price={product.price}
-            image={product.image}
-            name={product.name}
-            currency={product.currency}
-          />
+        {products?.map(({ name, price, image, currency }) => (
+          <Product key={name} price={price} image={image} name={name} currency={currency} />
         ))}
       </div>
-      <div>
-        {/* {Array.from({ length: totalPages }).map((_, i) => (
-          <PaginationButton key={i} onClickHandler={() => onSetPage(i)}>
-            {i + 1}
-          </PaginationButton>
-        ))} */}
-      </div>
+      {totalPages && <PaginationButtons pageCount={totalPages} onChange={onPageChange} />}
     </section>
   )
 }

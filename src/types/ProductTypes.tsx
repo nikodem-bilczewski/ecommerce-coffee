@@ -1,15 +1,4 @@
-export type ProductType = {
-  id: string
-  name: string
-  currency: string
-  description: string
-  price: number
-  image: string
-  quantity: number
-  sort: string
-  createDate: string
-  updateDate: string
-}
+import { ProductType } from 'components/pages/Products/Products.types'
 
 type metaData = {
   page: number

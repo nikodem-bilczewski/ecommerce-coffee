@@ -1,4 +1,4 @@
-import axios, { AxiosPromise } from 'axios'
+import axios from 'axios'
 import { ProductResponse } from 'types/ProductTypes'
 import { API_URL } from 'constants/constants'
 
