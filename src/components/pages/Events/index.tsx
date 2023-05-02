@@ -1,5 +1,5 @@
-import useEvents from './useEvents'
 import Event from 'components/organisms/Event/index'
+import useEvents from 'components/pages/Events/useEvents'
 
 const Events = () => {
   const coffeeEvents = useEvents()

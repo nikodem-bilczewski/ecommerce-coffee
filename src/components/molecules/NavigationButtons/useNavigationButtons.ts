@@ -1,4 +1,5 @@
 import { useState } from 'react'
+
 import { NavButtonType } from 'components/molecules/NavigationButtons/navButton.types'
 
 const useNavigationButtons = (): NavButtonType[] => {

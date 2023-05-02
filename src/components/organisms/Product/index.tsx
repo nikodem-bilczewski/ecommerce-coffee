@@ -1,5 +1,5 @@
-import { ProductPropType } from 'components/organisms/Product/Product.types'
 import Button from 'components/atoms/Button'
+import { ProductPropType } from 'components/organisms/Product/Product.types'
 
 const Product = ({ name, image, price, currency }: ProductPropType) => (
   <div className='grid gap-2 rounded-lg bg-stone-200 p-5 shadow-xl'>

@@ -10,3 +10,21 @@ export type ProductType = {
   createDate: string
   updateDate: string
 }
+
+type metaData = {
+  page: number
+  pages: number
+  totalCount: number
+  perPage: string
+}
+
+type queryData = {
+  perPage: string
+  page: number
+}
+
+export type ProductResponse = {
+  list: ProductType[]
+  meta: metaData
+  query: queryData
+}

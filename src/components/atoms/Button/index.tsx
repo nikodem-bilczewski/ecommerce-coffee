@@ -1,4 +1,5 @@
 import classNames from 'classnames'
+
 import { ButtonProps } from 'components/atoms/Button/Button.types'
 
 const Button = ({ children, primary, secondary, cartButton }: ButtonProps) => {
@@ -13,7 +14,8 @@ const Button = ({ children, primary, secondary, cartButton }: ButtonProps) => {
         secondary,
     },
     {
-      'w-full bg-lime-700 py-3 text-2xl text-white hover:bg-opacity-80': cartButton,
+      'w-full bg-lime-700 py-3 text-2xl text-white hover:bg-opacity-80':
+        cartButton,
     },
   )
   return <button className={classes}>{children}</button>

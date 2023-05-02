@@ -1,14 +1,16 @@
+import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
 import React from 'react'
 import ReactDOM from 'react-dom/client'
-import { QueryClientProvider, QueryClient } from '@tanstack/react-query'
-import { createBrowserRouter, RouterProvider } from 'react-router-dom'
-import 'index.css'
-import Layout from 'components/pages/Layout'
-import Home from 'components/pages/Home'
-import Products from 'components/pages/Products'
-import ProductDetails from 'components/pages/ProductDetails'
+import { RouterProvider, createBrowserRouter } from 'react-router-dom'
+
 import Events from 'components/pages/Events'
+import Home from 'components/pages/Home'
+import Layout from 'components/pages/Layout'
 import Newsletter from 'components/pages/Newsletter'
+import ProductDetails from 'components/pages/ProductDetails'
+import Products from 'components/pages/Products'
+
+import 'index.css'
 
 const queryClient = new QueryClient()
 

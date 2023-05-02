@@ -1,4 +1,5 @@
 import ReactPaginate from 'react-paginate'
+
 import { PaginationButtonProps } from 'components/molecules/PaginationButtons/PaginationButtons.types'
 
 const PaginationButtons = ({ pageCount, onChange }: PaginationButtonProps) => (

@@ -1,4 +1,5 @@
 import { NavLink } from 'react-router-dom'
+
 import { NavigationLinkProps } from 'components/atoms/NavigationLink/NavigationLink.types'
 
 const NavigationLink = ({ navigateTo, children }: NavigationLinkProps) => (

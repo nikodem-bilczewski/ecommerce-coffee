@@ -1,4 +1,5 @@
 import axios from 'axios'
+
 import { ProductResponse } from 'components/pages/Products/Products.types'
 
 const productsAPI = axios.create({

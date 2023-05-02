@@ -1,6 +1,7 @@
-import { useState } from 'react'
 import { useQuery } from '@tanstack/react-query'
-import { getProducts } from 'utils/getProducts'
+import { useState } from 'react'
+
+import { getProducts } from 'services/products'
 
 const useProducts = () => {
   const [currentPage, setCurrentPage] = useState(1)
@@ -11,8 +12,8 @@ const useProducts = () => {
     keepPreviousData: true,
   })
 
-  const products = data?.data.list
-  const totalPages = data?.data.meta.pages
+  const products = data?.list
+  const totalPages = data?.meta.pages
 
   const onPageChange = (pageNumber: number) => {
     setCurrentPage(pageNumber + 1)

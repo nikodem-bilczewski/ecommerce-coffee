@@ -1,6 +1,7 @@
-import Logo from 'components/atoms/Logo'
-import PhoneIcon from '@heroicons/react/24/outline/PhoneIcon'
 import AtSymbolIcon from '@heroicons/react/24/outline/AtSymbolIcon'
+import PhoneIcon from '@heroicons/react/24/outline/PhoneIcon'
+
+import Logo from 'components/atoms/Logo'
 
 const ShopContact = () => (
   <div className='mb-8'>

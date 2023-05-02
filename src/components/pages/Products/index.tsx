@@ -1,17 +1,21 @@
-import Product from 'components/organisms/Product'
 import PaginationButtons from 'components/molecules/PaginationButtons'
+import Product from 'components/organisms/Product'
 import useProducts from 'components/pages/Products/useProducts'
-import { ProductType } from 'components/pages/Products/Products.types'
 
 const Products = () => {
-  const { isLoading, isError, products, totalPages, onPageChange } = useProducts()
+  const { isLoading, isError, products, totalPages, onPageChange } =
+    useProducts()
 
   if (isLoading) {
     return <h2 className='text-center text-2xl'>Loading...</h2>
   }
 
   if (isError) {
-    return <h2 className='text-center text-2xl'>An error occured. Could not fetch products.</h2>
+    return (
+      <h2 className='text-center text-2xl'>
+        An error occured. Could not fetch products.
+      </h2>
+    )
   }
 
   return (
@@ -22,10 +26,18 @@ const Products = () => {
       </div>
       <div className='mx-auto grid w-full grid-cols-repeat place-items-center gap-10'>
         {products?.map(({ name, price, image, currency }) => (
-          <Product key={name} price={price} image={image} name={name} currency={currency} />
+          <Product
+            key={name}
+            price={price}
+            image={image}
+            name={name}
+            currency={currency}
+          />
         ))}
       </div>
-      {totalPages && <PaginationButtons pageCount={totalPages} onChange={onPageChange} />}
+      {totalPages && (
+        <PaginationButtons pageCount={totalPages} onChange={onPageChange} />
+      )}
     </section>
   )
 }
