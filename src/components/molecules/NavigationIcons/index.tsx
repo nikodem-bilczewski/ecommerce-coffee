@@ -1,0 +1,17 @@
+import ShoppingCartIcon from '@heroicons/react/24/outline/ShoppingCartIcon'
+import UserIcon from '@heroicons/react/24/outline/UserIcon'
+
+import IconWrapper from 'components/atoms/IconWrapper'
+
+const NavigationIcons = () => (
+  <div className='flex items-center justify-center gap-5'>
+    <IconWrapper>
+      <ShoppingCartIcon className='h-8 w-8 lg:h-10 lg:w-10' />
+    </IconWrapper>
+    <IconWrapper>
+      <UserIcon className='h-8 w-8 lg:h-10 lg:w-10' />
+    </IconWrapper>
+  </div>
+)
+
+export default NavigationIcons

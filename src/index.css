@@ -2,27 +2,23 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer base {
+  body {
+    @apply min-h-screen bg-stone-300 font-poppins;
+  }
+  *,
+  *::after,
+  *::before {
+    @apply m-0 box-border p-0;
+  }
+}
+
 @layer components {
   .nav-link {
     @apply mx-1 rounded-md bg-black bg-opacity-0  px-4 py-2 text-lg transition sm:text-xl md:text-2xl;
   }
 }
 
-*,
-*::before,
-*::after {
-  padding: 0;
-  margin: 0;
-  box-sizing: border-box;
-}
-
 html {
   font-size: 62.5%;
-}
-
-body {
-  font-family: 'Poppins', 'sans-serif';
-  min-height: 100dvh;
-  min-height: 100vh;
-  background-color: rgb(214 211 209);
 }
