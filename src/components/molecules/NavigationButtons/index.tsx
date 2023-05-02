@@ -1,5 +1,6 @@
 import NavigationLink from 'components/atoms/NavigationLink'
-import useNavigationButtons from 'components/molecules/NavigationButtons/useNavigationButtons'
+
+import useNavigationButtons from './useNavigationButtons'
 
 const NavigationButtons = () => {
   const navButtons = useNavigationButtons()

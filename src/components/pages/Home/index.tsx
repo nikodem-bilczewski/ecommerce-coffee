@@ -1,11 +1,10 @@
 import { Link } from 'react-router-dom'
 
-import Button from 'components/atoms/Button'
-import Card from 'components/molecules/Card/index'
-import ShopDetails from 'components/organisms/ShopDetails'
-
 import image2 from 'assets/images/cups.jpg'
 import image1 from 'assets/images/drip.jpg'
+import Button from 'components/molecules/Button'
+import Card from 'components/molecules/Card/index'
+import ShopDetails from 'components/organisms/ShopDetails'
 
 const Home = () => (
   <main className='mx-auto flex min-h-screen w-4/5 flex-col justify-evenly text-center'>

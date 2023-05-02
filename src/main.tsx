@@ -7,7 +7,7 @@ import Events from 'components/pages/Events'
 import Home from 'components/pages/Home'
 import Layout from 'components/pages/Layout'
 import Newsletter from 'components/pages/Newsletter'
-import ProductDetails from 'components/pages/ProductDetails'
+// import ProductDetails from 'components/pages/ProductDetails'
 import Products from 'components/pages/Products'
 
 import 'index.css'
@@ -21,7 +21,7 @@ const router = createBrowserRouter([
     children: [
       { index: true, element: <Home /> },
       { path: 'products', element: <Products /> },
-      { path: 'products/:productName', element: <ProductDetails /> },
+      // { path: 'products/:productName', element: <ProductDetails /> },
       { path: 'events', element: <Events /> },
       { path: 'newsletter', element: <Newsletter /> },
     ],

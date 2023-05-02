@@ -1,12 +1,10 @@
-import { useState } from 'react'
-
 const useFooterInfo = () => {
-  const [footerInfo] = useState<string[]>([
+  const footerInfo = [
     'Terms and conditions',
     'Privacy policy',
     'Delivery and payment methods',
     'Loyalty program',
-  ])
+  ]
   return footerInfo
 }
 

@@ -1,7 +1,8 @@
-import Button from 'components/atoms/Button'
-import { ProductPropType } from 'components/organisms/Product/Product.types'
+import Button from 'components/molecules/Button'
 
-const Product = ({ name, image, price, currency }: ProductPropType) => (
+import { ProductProps } from './Product.types'
+
+const Product = ({ name, image, price, currency }: ProductProps) => (
   <div className='grid gap-2 rounded-lg bg-stone-200 p-5 shadow-xl'>
     <img
       src={image}

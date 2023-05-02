@@ -1,10 +1,8 @@
-import { useState } from 'react'
-import cuppingImg from 'assets/images/cupping.jpg'
 import baristaImg from 'assets/images/barista.jpg'
-import { CoffeeEvent } from 'components/organisms/Event/CoffeeEvent.type'
+import cuppingImg from 'assets/images/cupping.jpg'
 
 const useEvents = () => {
-  const [coffeeEvents] = useState<CoffeeEvent[]>([
+  const coffeeEvents = [
     {
       heading: 'Cupping',
       description:
@@ -19,7 +17,7 @@ const useEvents = () => {
       image: baristaImg,
       date: '2023-06-27',
     },
-  ])
+  ]
   return coffeeEvents
 }
 

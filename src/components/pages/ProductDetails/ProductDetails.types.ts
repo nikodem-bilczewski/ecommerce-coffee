@@ -1,4 +1,4 @@
-export type ProductDetailsProp = {
+export type ProductDetailsProps = {
   title: string
   description: string
   price: string

@@ -1,4 +1,4 @@
-import useFooterInfo from 'components/molecules/FooterInfo/useFooterInfo'
+import useFooterInfo from './useFooterInfo'
 
 const FooterInfo = () => {
   const footerInfo = useFooterInfo()

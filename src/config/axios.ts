@@ -6,7 +6,12 @@ const productsAPI = axios.create({
   baseURL: import.meta.env.VITE_BASE_URL,
 })
 
-export const getProducts = async (page: number): Promise<ProductResponse> => {
-  const response = await productsAPI.get(`api/products?perPage=6&page=${page}`)
+export const getProducts = async (
+  page: number,
+  perPage = 6,
+): Promise<ProductResponse> => {
+  const response = await productsAPI.get(
+    `api/products?perPage=${perPage}&page=${page}`,
+  )
   return response.data
 }

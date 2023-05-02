@@ -1,4 +1,4 @@
-export type CardPropType = {
+export type CardProps = {
   src: string
   heading: string
   btnText?: string

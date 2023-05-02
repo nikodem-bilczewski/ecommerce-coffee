@@ -1,6 +1,7 @@
 import PaginationButtons from 'components/molecules/PaginationButtons'
 import Product from 'components/organisms/Product'
-import useProducts from 'components/pages/Products/useProducts'
+
+import useProducts from './useProducts'
 
 const Products = () => {
   const { isLoading, isError, products, totalPages, onPageChange } =

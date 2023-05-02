@@ -2,13 +2,7 @@
   "semi": false,
   "tabWidth": 2,
   "printWidth": 80,
-  "importOrder": [
-    "^services(.*)$",
-    "^components/(.*)$",
-    "^assets/(.*)$",
-    "^[./]",
-    "^index.css"
-  ],
+  "importOrder": ["^(assets|components|config)/(.*)$", "^[./]", "^index.css"],
   "importOrderSeparation": true,
   "importOrderSortSpecifiers": true,
   "singleQuote": true,

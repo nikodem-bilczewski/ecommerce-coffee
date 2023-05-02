@@ -1,9 +1,10 @@
 import { Link } from 'react-router-dom'
 
-import Button from 'components/atoms/Button'
-import { CardPropType } from 'components/molecules/Card/Card.types'
+import Button from 'components/molecules/Button'
 
-const Card = ({ src, heading, btnText, path }: CardPropType) => (
+import { CardProps } from './Card.types'
+
+const Card = ({ src, heading, btnText, path }: CardProps) => (
   <div className='group relative mx-auto max-w-4xl overflow-hidden rounded-lg shadow-xl'>
     <img
       className='transition-transform duration-500 group-hover:scale-110'

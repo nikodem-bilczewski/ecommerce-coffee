@@ -1,4 +1,4 @@
-export type ProductType = {
+export type Product = {
   id: string
   name: string
   currency: string
@@ -24,7 +24,7 @@ type queryData = {
 }
 
 export type ProductResponse = {
-  list: ProductType[]
+  list: Product[]
   meta: metaData
   query: queryData
 }

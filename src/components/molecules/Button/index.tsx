@@ -1,10 +1,9 @@
 import classNames from 'classnames'
 
-import { ButtonProps } from 'components/atoms/Button/Button.types'
+import { ButtonProps } from './Button.types'
 
 const Button = ({ children, primary, secondary, cartButton }: ButtonProps) => {
   const classes = classNames(
-    'rounded-md transition-all',
     {
       'bg-white bg-opacity-60 px-4 py-2 text-xl text-gray-900 hover:bg-opacity-75 md:text-2xl md:px-5 md:py-3':
         primary,
@@ -18,7 +17,11 @@ const Button = ({ children, primary, secondary, cartButton }: ButtonProps) => {
         cartButton,
     },
   )
-  return <button className={classes}>{children}</button>
+  return (
+    <button className={`rounded-md transition-all ${classes}`}>
+      {children}
+    </button>
+  )
 }
 
 export default Button
