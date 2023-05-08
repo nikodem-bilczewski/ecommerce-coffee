@@ -5,4 +5,6 @@ export type ButtonProps = {
   cartButton?: boolean
   primary?: boolean
   secondary?: boolean
+  formButton?: boolean
+  type?: 'button' | 'submit'
 }
