@@ -1,7 +1,7 @@
 import { useQuery } from '@tanstack/react-query'
 import { useState } from 'react'
 
-import { getProducts } from 'config/axios'
+import { getProducts } from 'config/axios/axios'
 
 const useProducts = () => {
   const [currentPage, setCurrentPage] = useState(1)

@@ -6,5 +6,7 @@ export type ButtonProps = {
   primary?: boolean
   secondary?: boolean
   formButton?: boolean
+  loadingButton?: boolean
   type?: 'button' | 'submit'
+  onClick?: () => void
 }

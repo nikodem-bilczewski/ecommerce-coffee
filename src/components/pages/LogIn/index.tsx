@@ -1,9 +1,9 @@
-import Form from 'components/molecules/Form'
+import AuthForm from 'components/molecules/AuthForm'
 import FormWrapper from 'components/organisms/FormWrapper'
 
 const Login = () => (
   <FormWrapper isLogInForm>
-    <Form isLogInForm />
+    <AuthForm isLogInForm />
   </FormWrapper>
 )
 

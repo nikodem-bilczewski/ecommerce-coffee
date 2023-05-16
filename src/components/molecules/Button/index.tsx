@@ -8,7 +8,9 @@ const Button = ({
   secondary,
   cartButton,
   formButton,
+  loadingButton,
   type = 'button',
+  onClick,
 }: ButtonProps) => {
   const classes = classNames(
     {
@@ -27,9 +29,17 @@ const Button = ({
       'w-full bg-lime-700 py-3 text-2xl text-white hover:bg-opacity-80':
         cartButton,
     },
+    {
+      'w-full flex items-center justify-center bg-blue-400 bg-opacity-30 py-4 text-2xl text-gray-900 disabled cursor-not-allowed':
+        loadingButton,
+    },
   )
   return (
-    <button type={type} className={`rounded-md transition-all ${classes}`}>
+    <button
+      type={type}
+      onClick={onClick}
+      className={`rounded-md transition-all ${classes}`}
+    >
       {children}
     </button>
   )

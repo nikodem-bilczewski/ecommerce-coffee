@@ -1,7 +1,9 @@
 import axios from 'axios'
 
-import { FormInput } from 'components/molecules/Form'
+import { FormInput } from 'components/molecules/AuthForm/AuthForm.types'
 import { ProductResponse } from 'components/pages/Products/Products.types'
+
+import { AuthResponse } from './axios.types'
 
 const productsAPI = axios.create({
   baseURL: import.meta.env.VITE_BASE_URL,
@@ -19,18 +21,16 @@ export const getProducts = async (
 
 const authAPI = axios.create({
   baseURL: 'http://localhost:3000/api/auth',
-  withCredentials: true,
 })
 
 authAPI.defaults.headers.common['Content-Type'] = 'application/json'
 
-interface GenericResponse {
-  accessToken: string
-  refreshToken: string
+export const signUpFn = async (userData: FormInput): Promise<AuthResponse> => {
+  const response = await authAPI.post('/register', userData)
+  return response.data
 }
 
-export const signUpFn = async (user: FormInput): Promise<GenericResponse> => {
-  const response = await authAPI.post('/register', user)
-  console.log(response.data)
+export const logInFn = async (userData: FormInput): Promise<AuthResponse> => {
+  const response = await authAPI.post('/login', userData)
   return response.data
 }

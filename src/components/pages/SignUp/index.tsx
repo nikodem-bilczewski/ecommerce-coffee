@@ -1,10 +1,9 @@
-import Form from 'components/molecules/Form'
+import AuthForm from 'components/molecules/AuthForm'
 import FormWrapper from 'components/organisms/FormWrapper'
 
 const SignUp = () => (
-  <FormWrapper isLogInForm={false}>
-    <Form isLogInForm={false} />
+  <FormWrapper>
+    <AuthForm />
   </FormWrapper>
 )
-
 export default SignUp

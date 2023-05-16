@@ -1,8 +1,8 @@
 import { useFormContext } from 'react-hook-form'
 
-import { FormInputProps } from './FormInput.types'
+import { InputProps } from './FormInput.types'
 
-const FormInput = ({ label, name, type }: FormInputProps) => {
+const Input = ({ label, name, type }: InputProps) => {
   const {
     register,
     formState: { errors },
@@ -31,4 +31,4 @@ const FormInput = ({ label, name, type }: FormInputProps) => {
   )
 }
 
-export default FormInput
+export default Input

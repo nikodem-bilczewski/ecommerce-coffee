@@ -1,5 +1,5 @@
-export type FormInputProps = {
+export type InputProps = {
   label: string
   name: string
-  type?: string
+  type: string
 }

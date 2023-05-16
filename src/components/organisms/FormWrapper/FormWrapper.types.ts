@@ -1,6 +1,6 @@
 import { ReactNode } from 'react'
 
 export type FormWrapperProps = {
-  isLogInForm: boolean
+  isLogInForm?: boolean
   children: ReactNode
 }
