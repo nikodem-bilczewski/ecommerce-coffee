@@ -9,7 +9,7 @@ import { AuthFormProps } from './AuthForm.types'
 import useAuthForm from './useAuthForm'
 
 const AuthForm = ({ isLogInForm = false }: AuthFormProps) => {
-  const { methods, handleSubmit, onSubmit, isLoading, isError } = useAuthForm({
+  const { methods, onSubmit, isLoading, isError } = useAuthForm({
     isLogInForm,
   })
 
@@ -17,7 +17,7 @@ const AuthForm = ({ isLogInForm = false }: AuthFormProps) => {
     <>
       <FormProvider {...methods}>
         <form
-          onSubmit={handleSubmit(onSubmit)}
+          onSubmit={methods.handleSubmit(onSubmit)}
           className='space-y-6 w-full mt-10 sm:mx-auto sm:w-4/5 sm:max-w-3xl'
           action='#'
           method='POST'
@@ -35,17 +35,11 @@ const AuthForm = ({ isLogInForm = false }: AuthFormProps) => {
             </div>
           )}
           <div className='w-full'>
-            {isLoading ? (
-              <Button loadingButton>
-                <Spinner />
-                Loading...
-              </Button>
-            ) : (
-              <Button type='submit' formButton>
-                {isLogInForm ? 'Log in' : 'Sign up'}
-              </Button>
-            )}
+            <Button type='submit' secondary disabled={isLoading}>
+              {isLogInForm ? 'Log in' : 'Sign up'}
+            </Button>
           </div>
+          {isLoading && <Spinner />}
         </form>
       </FormProvider>
       {isError && <ErrorMessage isLogInForm />}

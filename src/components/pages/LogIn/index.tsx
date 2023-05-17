@@ -1,10 +1,10 @@
 import AuthForm from 'components/molecules/AuthForm'
 import FormWrapper from 'components/organisms/FormWrapper'
 
-const Login = () => (
+const LogIn = () => (
   <FormWrapper isLogInForm>
     <AuthForm isLogInForm />
   </FormWrapper>
 )
 
-export default Login
+export default LogIn

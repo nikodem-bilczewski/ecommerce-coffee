@@ -6,9 +6,8 @@ const Button = ({
   children,
   primary,
   secondary,
-  cartButton,
-  formButton,
-  loadingButton,
+  tertiary,
+  disabled,
   type = 'button',
   onClick,
 }: ButtonProps) => {
@@ -18,24 +17,17 @@ const Button = ({
         primary,
     },
     {
-      'bg-black px-5 py-2 text-2xl text-gray-900 bg-opacity-20 hover:bg-opacity-30 lg:text-3xl lg:font-light':
+      'bg-black w-full px-5 py-2 text-2xl text-gray-900 bg-opacity-20 hover:bg-opacity-30 lg:text-3xl lg:font-light':
         secondary,
     },
     {
-      'w-full text-gray-900 bg-blue-400 bg-opacity-50 py-4 text-2xl hover:bg-opacity-40':
-        formButton,
-    },
-    {
       'w-full bg-lime-700 py-3 text-2xl text-white hover:bg-opacity-80':
-        cartButton,
-    },
-    {
-      'w-full flex items-center justify-center bg-blue-400 bg-opacity-30 py-4 text-2xl text-gray-900 disabled cursor-not-allowed':
-        loadingButton,
+        tertiary,
     },
   )
   return (
     <button
+      disabled={disabled}
       type={type}
       onClick={onClick}
       className={`rounded-md transition-all ${classes}`}

@@ -12,7 +12,7 @@ const Product = ({ name, image, price, currency }: ProductProps) => (
     <p className='mb-1 text-2xl font-light'>
       {price} {currency}
     </p>
-    <Button cartButton>Add to cart</Button>
+    <Button tertiary>Add to cart</Button>
   </div>
 )
 

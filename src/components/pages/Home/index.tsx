@@ -38,9 +38,11 @@ const Home = () => (
           Browse our shop to discover our wide range of coffee brands and
           blends.
         </h2>
-        <Link to='products'>
-          <Button secondary>Shop Now</Button>
-        </Link>
+        <div className=' w-52 mx-auto'>
+          <Link to='products'>
+            <Button secondary>Shop Now</Button>
+          </Link>
+        </div>
       </div>
     </section>
     <ShopDetails />
