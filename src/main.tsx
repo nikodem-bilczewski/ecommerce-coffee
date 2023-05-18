@@ -1,37 +1,23 @@
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
+import App from 'App'
 import React from 'react'
 import ReactDOM from 'react-dom/client'
-import { RouterProvider, createBrowserRouter } from 'react-router-dom'
+import { BrowserRouter } from 'react-router-dom'
 
-import Events from 'components/pages/Events'
-import Home from 'components/pages/Home'
-import Layout from 'components/pages/Layout'
-import Newsletter from 'components/pages/Newsletter'
-// import ProductDetails from 'components/pages/ProductDetails'
-import Products from 'components/pages/Products'
+import { AuthContextProvider } from 'components/shared/AuthContext'
 
 import 'index.css'
 
 const queryClient = new QueryClient()
 
-const router = createBrowserRouter([
-  {
-    path: '/',
-    element: <Layout />,
-    children: [
-      { index: true, element: <Home /> },
-      { path: 'products', element: <Products /> },
-      // { path: 'products/:productName', element: <ProductDetails /> },
-      { path: 'events', element: <Events /> },
-      { path: 'newsletter', element: <Newsletter /> },
-    ],
-  },
-])
-
 ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
   <React.StrictMode>
-    <QueryClientProvider client={queryClient}>
-      <RouterProvider router={router} />
-    </QueryClientProvider>
+    <BrowserRouter>
+      <AuthContextProvider>
+        <QueryClientProvider client={queryClient}>
+          <App />
+        </QueryClientProvider>
+      </AuthContextProvider>
+    </BrowserRouter>
   </React.StrictMode>,
 )
