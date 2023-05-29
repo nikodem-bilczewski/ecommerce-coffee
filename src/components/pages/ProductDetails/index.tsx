@@ -1,21 +1,11 @@
-import { useQuery } from '@tanstack/react-query'
-import { useParams } from 'react-router'
 import { Link } from 'react-router-dom'
-import { getProduct } from 'services/products'
 
 import Button from 'components/molecules/Button'
 
-const ProductDetails = () => {
-  const { id } = useParams()
+import useProductDetails from './useProductDetails'
 
-  const {
-    data: product,
-    isLoading,
-    isError,
-  } = useQuery({
-    queryKey: ['product', id],
-    queryFn: () => getProduct(id),
-  })
+const ProductDetails = () => {
+  const { data: product, isLoading, isError } = useProductDetails()
 
   if (isLoading) {
     return <h2 className='text-center text-2xl'>Loading...</h2>
@@ -30,10 +20,10 @@ const ProductDetails = () => {
   }
 
   return (
-    <div className='flex flex-col my-8 w-4/5 mx-auto'>
-      <div className='mx-auto my-20 md:my-26 lg:my-28 flex w-full flex-col gap-7 rounded-lg bg-stone-200 p-7 shadow-xl  lg:flex-row'>
+    <div className='flex flex-col justify-around gap-10 my-10 w-4/5 xl:w-3/5 mx-auto'>
+      <div className='mx-auto md:my-26 lg:my-28 flex w-full flex-col gap-7 rounded-lg bg-stone-200 p-7 shadow-xl  lg:flex-row'>
         <img
-          className=' aspect-[1/1] h-full w-full rounded-md object-fill object-center md:mb-0 md:max-w-xl '
+          className='aspect-[1/1] h-full w-full rounded-md object-fill object-center md:mb-0 md:max-w-xl '
           src={
             import.meta.env.VITE_BASE_URL +
             product?.data.attributes.img.data.attributes.url
