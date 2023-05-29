@@ -4,8 +4,14 @@ import Product from 'components/organisms/Product'
 import useProducts from './useProducts'
 
 const Products = () => {
-  const { isLoading, isError, products, totalPages, onPageChange } =
-    useProducts()
+  const {
+    isLoading,
+    isError,
+    products,
+    totalPages,
+    currentPage,
+    onPageChange,
+  } = useProducts()
 
   if (isLoading) {
     return <h2 className='text-center text-2xl'>Loading...</h2>
@@ -38,7 +44,11 @@ const Products = () => {
         ))}
       </div>
       {totalPages && (
-        <PaginationButtons pageCount={totalPages} onChange={onPageChange} />
+        <PaginationButtons
+          pageCount={totalPages}
+          forcePage={currentPage}
+          onChange={onPageChange}
+        />
       )}
     </section>
   )
