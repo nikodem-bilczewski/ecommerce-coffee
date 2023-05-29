@@ -11,8 +11,8 @@ const useProducts = () => {
     keepPreviousData: true,
   })
 
-  const products = data?.list
-  const totalPages = data?.meta.pages
+  const products = data?.data
+  const totalPages = data?.meta.pagination.pageCount
 
   const onPageChange = (pageNumber: number) => {
     setCurrentPage(pageNumber + 1)

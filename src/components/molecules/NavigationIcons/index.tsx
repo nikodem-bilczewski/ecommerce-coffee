@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom'
 
 import IconWrapper from 'components/atoms/IconWrapper'
 import Button from 'components/molecules/Button'
-import AuthContext from 'components/shared/AuthContext'
+import { AuthContext } from 'components/shared/AuthContext'
 
 const NavigationIcons = () => {
   const { user, logOut } = useContext(AuthContext)

@@ -26,13 +26,14 @@ const Products = () => {
         <span className='mb-5 h-1 w-full border-b border-gray-400'></span>
       </div>
       <div className='mx-auto grid w-full grid-cols-repeat place-items-center gap-10'>
-        {products?.map(({ name, price, image, currency }) => (
+        {products?.map(({ id, attributes }) => (
           <Product
-            key={name}
-            price={price}
-            image={image}
-            name={name}
-            currency={currency}
+            key={id}
+            id={id}
+            price={attributes.price}
+            img={attributes.img.data.attributes.url}
+            title={attributes.title}
+            currency={attributes.currency}
           />
         ))}
       </div>
