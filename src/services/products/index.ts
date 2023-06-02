@@ -1,12 +1,16 @@
 import {
   ProductResponse,
   ProductsResponse,
-} from 'components/pages/Products/Products.types'
+} from 'components/organisms/ProductsList/Products.types'
 import { productsAPI } from 'config/axios'
 
-export const getProducts = async (page: number, perPage = 6) => {
+export const getProducts = async (
+  page: number,
+  selectedCategory: string,
+  perPage = 6,
+) => {
   const response = await productsAPI.get<ProductsResponse>(
-    `/api/items?populate=*&pagination[page]=${page}&pagination[pageSize]=${perPage}`,
+    `/api/items?populate=*&pagination[page]=${page}&pagination[pageSize]=${perPage}&filters[category][$containsi]=${selectedCategory}`,
   )
   return response.data
 }
