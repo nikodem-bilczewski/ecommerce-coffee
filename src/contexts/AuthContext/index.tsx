@@ -7,7 +7,7 @@ import { AuthResponse } from 'config/axios/axios.types'
 
 import { IAuthContext, User } from './AuthContext.types'
 
-const AuthContext = createContext<IAuthContext>({
+export const AuthContext = createContext<IAuthContext>({
   user: null,
   logIn: () => undefined,
   logOut: () => undefined,
@@ -21,7 +21,7 @@ const getUser = (): string | null => {
   return null
 }
 
-export const AuthContextProvider = ({ children }: { children: ReactNode }) => {
+const AuthContextProvider = ({ children }: { children: ReactNode }) => {
   const [user, setUser] = useState<User>(() => getUser())
 
   const navigate = useNavigate()
@@ -44,5 +44,4 @@ export const AuthContextProvider = ({ children }: { children: ReactNode }) => {
     </AuthContext.Provider>
   )
 }
-
-export default AuthContext
+export default AuthContextProvider

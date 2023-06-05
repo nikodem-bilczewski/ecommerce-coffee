@@ -1,11 +1,11 @@
 import ShoppingCartIcon from '@heroicons/react/24/outline/ShoppingCartIcon'
 import UserIcon from '@heroicons/react/24/outline/UserIcon'
+import { AuthContext } from 'contexts/AuthContext'
 import { useContext } from 'react'
 import { Link } from 'react-router-dom'
 
 import IconWrapper from 'components/atoms/IconWrapper'
 import Button from 'components/molecules/Button'
-import AuthContext from 'components/shared/AuthContext'
 
 const NavigationIcons = () => {
   const { user, logOut } = useContext(AuthContext)
