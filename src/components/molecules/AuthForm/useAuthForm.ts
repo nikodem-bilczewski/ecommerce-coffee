@@ -3,8 +3,7 @@ import { useMutation } from '@tanstack/react-query'
 import { useContext } from 'react'
 import { SubmitHandler, useForm } from 'react-hook-form'
 import { logInFn, signUpFn } from 'services/auth'
-
-import { AuthContext } from 'components/shared/AuthContext'
+import { AuthContext } from 'shared/AuthContext'
 
 import { AuthFormProps, FormInput } from './AuthForm.types'
 import { authSchema } from './authSchema'

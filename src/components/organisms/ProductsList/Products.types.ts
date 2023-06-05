@@ -1,3 +1,11 @@
+interface imgUrl {
+  data: {
+    attributes: {
+      url: string
+    }
+  }
+}
+
 export interface Product {
   id: number
   attributes: {
@@ -9,13 +17,7 @@ export interface Product {
     createdAt: string
     currency: string
     description: string
-    img: {
-      data: {
-        attributes: {
-          url: string
-        }
-      }
-    }
+    img: imgUrl
   }
 }
 

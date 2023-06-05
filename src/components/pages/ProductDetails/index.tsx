@@ -5,7 +5,10 @@ import Button from 'components/molecules/Button'
 import useProductDetails from './useProductDetails'
 
 const ProductDetails = () => {
-  const { data: product, isLoading, isError } = useProductDetails()
+  const { data, isLoading, isError } = useProductDetails()
+
+  const product = data?.data.attributes
+  const url = product?.img.data.attributes.url
 
   if (isLoading) {
     return <h2 className='text-center text-2xl'>Loading...</h2>
@@ -24,22 +27,15 @@ const ProductDetails = () => {
       <div className='mx-auto md:my-26 lg:my-28 flex w-full flex-col gap-7 rounded-lg bg-stone-200 p-7 shadow-xl  lg:flex-row'>
         <img
           className='aspect-[1/1] h-full w-full rounded-md object-fill object-center md:mb-0 md:max-w-xl '
-          src={
-            import.meta.env.VITE_BASE_URL +
-            product?.data.attributes.img.data.attributes.url
-          }
+          src={import.meta.env.VITE_BASE_URL + url}
         />
         <div className='flex flex-col justify-between'>
           <div>
-            <h2 className='mb-4 text-4xl md:text-5xl'>
-              {product?.data.attributes.title}
-            </h2>
-            <p className='mb-6 text-2xl font-light'>
-              {product?.data.attributes.description}
-            </p>
+            <h2 className='mb-4 text-4xl md:text-5xl'>{product?.title}</h2>
+            <p className='mb-6 text-2xl font-light'>{product?.description}</p>
             <p className='text-3xl'>
-              <span className='mr-2'>{product?.data.attributes.price}</span>
-              {product?.data.attributes.currency}
+              <span className='mr-2'>{product?.price}</span>
+              {product?.currency}
             </p>
             <form className='my-8 flex items-center gap-4'>
               <label
