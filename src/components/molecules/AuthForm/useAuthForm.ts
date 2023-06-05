@@ -1,9 +1,9 @@
 import { zodResolver } from '@hookform/resolvers/zod'
 import { useMutation } from '@tanstack/react-query'
+import { AuthContext } from 'contexts/AuthContext'
 import { useContext } from 'react'
 import { SubmitHandler, useForm } from 'react-hook-form'
 import { logInFn, signUpFn } from 'services/auth'
-import { AuthContext } from 'shared/AuthContext'
 
 import { AuthFormProps, FormInput } from './AuthForm.types'
 import { authSchema } from './authSchema'
