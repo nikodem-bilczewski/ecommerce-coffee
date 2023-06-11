@@ -1,6 +1,6 @@
 import Filters from 'components/molecules/Filters'
 import PaginationButtons from 'components/molecules/PaginationButtons'
-import Product from 'components/organisms/Product'
+import Product from 'components/molecules/Product'
 
 import useProducts from './useProducts'
 
@@ -36,15 +36,8 @@ const ProductList = () => {
       />
       <div className='mx-auto my-10 flex w-full flex-col items-start justify-start gap-12 self-stretch'>
         <div className='mx-auto grid w-full grid-cols-repeat place-items-center gap-10'>
-          {products?.map(({ id, attributes }) => (
-            <Product
-              key={id}
-              id={id}
-              price={attributes.price}
-              img={attributes.img.data.attributes.url}
-              title={attributes.title}
-              currency={attributes.currency}
-            />
+          {products?.map((product) => (
+            <Product key={product.id} product={product} />
           ))}
         </div>
         {totalPages && (

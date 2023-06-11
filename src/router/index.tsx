@@ -6,7 +6,7 @@ import {
   Layout,
   LogIn,
   Newsletter,
-  ProductDetails,
+  ProductDetailsPage,
   Products,
   SignUp,
 } from 'components/pages'
@@ -21,7 +21,7 @@ const routes: RouteObject[] = [
         path: 'products',
         element: <Products />,
       },
-      { path: 'products/:id', element: <ProductDetails /> },
+      { path: 'products/:id', element: <ProductDetailsPage /> },
       { path: 'events', element: <Events /> },
       { path: 'newsletter', element: <Newsletter /> },
       { path: 'login', element: <LogIn /> },
