@@ -1,22 +1,23 @@
 import XMarkIcon from '@heroicons/react/24/outline/XMarkIcon'
+import classNames from 'classnames'
 
 import IconWrapper from 'components/atoms/IconWrapper'
 import Button from 'components/molecules/Button'
-import CartProduct from 'components/molecules/CartProduct'
+import CartProduct from 'components/organisms/CartProduct'
 import useCartContext from 'contexts/CartContext/useCartContext'
 
 const Cart = () => {
   const { cart, toggleCart, isOpen, totalPrice, totalItems, clearCart } =
     useCartContext()
 
+  const classes = classNames(
+    'flex flex-col justify-between fixed z-40 h-full w-[30rem] bg-stone-200 shadow-md md:w-[42rem] overflow-y-auto transition-all duration-500',
+    { '-translate-x-[0rem] opacity-100': isOpen },
+    { '-translate-x-[48rem] opacity-0': !isOpen },
+  )
+
   return (
-    <div
-      className={`${
-        isOpen
-          ? '-translate-x-[0rem] opacity-100'
-          : '-translate-x-[48rem] opacity-0'
-      } flex flex-col justify-between top-0 left-0 fixed z-40 h-full w-[30rem] bg-stone-200 shadow-md md:w-[42rem] overflow-y-auto overflow-x-hidden transition-all duration-500`}
-    >
+    <div className={classes}>
       <div className='flex items-center justify-between p-6'>
         <div className='text-xl md:text-3xl md:font-light'>
           Shopping Cart ({totalItems})
