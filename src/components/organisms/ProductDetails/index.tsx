@@ -66,9 +66,7 @@ const ProductDetails = ({
           </div>
           <Button
             onClick={() =>
-              cartItem &&
-              id &&
-              addItem({ item: cartItem, quantity: quantity, id: id })
+              cartItem && id && addItem({ item: cartItem, quantity, id })
             }
             tertiary
           >
