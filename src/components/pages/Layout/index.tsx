@@ -1,3 +1,4 @@
+import classNames from 'classnames'
 import { Outlet } from 'react-router-dom'
 
 import Overlay from 'components/atoms/Overlay'
@@ -8,12 +9,16 @@ import useCartContext from 'contexts/CartContext/useCartContext'
 
 const Layout = () => {
   const { isOpen } = useCartContext()
+
+  const classes = classNames(
+    'flex min-h-screen w-full flex-col justify-between',
+    {
+      'fixed h-screen': isOpen,
+    },
+  )
+
   return (
-    <div
-      className={`${
-        isOpen ? 'fixed h-screen' : ''
-      }flex min-h-screen w-full flex-col justify-between`}
-    >
+    <div className={classes}>
       {isOpen && <Overlay />}
       <Cart />
       <Header />

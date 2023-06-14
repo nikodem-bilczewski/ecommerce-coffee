@@ -9,9 +9,8 @@ import { CartProductProps } from './CartProduct.types'
 const CartProduct = ({ item }: CartProductProps) => {
   const { updateItem, deleteItem } = useCartContext()
 
-  const title = item.item.attributes.title
+  const { title, price } = item.item.attributes
   const img = item.item.attributes.img.data.attributes.url
-  const price = item.item.attributes.price
 
   return (
     <div className='flex justify-between bg-stone-100 mx-10 gap-2 items-center p-4 rounded-md shadow-md'>
