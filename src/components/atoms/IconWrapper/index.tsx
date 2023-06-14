@@ -5,7 +5,7 @@ const IconWrapper = ({
   clickHandler,
 }: {
   children: ReactNode
-  clickHandler?: () => void
+  clickHandler?: VoidFunction
 }) => (
   <div
     onClick={clickHandler}
