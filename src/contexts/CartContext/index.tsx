@@ -2,17 +2,7 @@ import { ReactNode, createContext, useEffect, useState } from 'react'
 
 import { CartContextType, CartItem } from './CartContext.types'
 
-export const CartContext = createContext<CartContextType>({
-  cart: [],
-  isOpen: false,
-  totalPrice: 0,
-  totalItems: 0,
-  toggleCart: () => undefined,
-  addItem: () => undefined,
-  updateItem: () => undefined,
-  deleteItem: () => undefined,
-  clearCart: () => undefined,
-})
+export const CartContext = createContext<CartContextType | null>(null)
 
 const CartContextProvider = ({ children }: { children: ReactNode }) => {
   const storedCart = localStorage.getItem('cart')
