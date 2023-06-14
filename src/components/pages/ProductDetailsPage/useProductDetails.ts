@@ -10,9 +10,8 @@ const useProductDetails = () => {
   const [quantity, setQuantity] = useState(1)
 
   const handleQuantityChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-    const inputQuantity = event.target.value
-    const newQuantity = inputQuantity === '' ? 1 : parseInt(inputQuantity, 10)
-    setQuantity(newQuantity)
+    const inputQuantity = Number(event.target.value)
+    setQuantity(inputQuantity)
   }
 
   const { data, isLoading, isError } = useQuery({
