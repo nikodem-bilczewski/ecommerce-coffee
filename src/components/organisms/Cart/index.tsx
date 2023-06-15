@@ -10,13 +10,10 @@ const Cart = () => {
   const { cart, toggleCart, isOpen, totalPrice, totalItems, clearCart } =
     useCartContext()
 
-  const classes = classNames(
-    'flex flex-col justify-between fixed z-40 h-full w-[30rem] bg-stone-200 shadow-md md:w-[42rem] overflow-y-auto transition-all duration-500',
-    {
-      '-translate-x-[0rem] opacity-100': isOpen,
-      '-translate-x-[48rem] opacity-0': !isOpen,
-    },
-  )
+  const classes = classNames('cart', {
+    '-translate-x-[0rem] opacity-100': isOpen,
+    '-translate-x-[48rem] opacity-0': !isOpen,
+  })
 
   return (
     <div className={classes}>
