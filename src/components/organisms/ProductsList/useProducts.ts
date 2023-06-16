@@ -1,11 +1,13 @@
 import { useQuery } from '@tanstack/react-query'
 import { ChangeEvent, useState } from 'react'
+
 import { getProducts } from 'services/products'
 
 const useProducts = () => {
   const [currentPage, setCurrentPage] = useState(
     Number(sessionStorage.getItem('currentPage')) || 1,
   )
+
   const [selectedCategory, setSelectedCategory] = useState<string>(
     sessionStorage.getItem('currentCategory') || 'all',
   )

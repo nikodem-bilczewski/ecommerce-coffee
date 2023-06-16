@@ -1,14 +1,23 @@
 import { Link } from 'react-router-dom'
 
 import Button from 'components/molecules/Button'
+import useCartContext from 'contexts/CartContext/useCartContext'
 
-import useProductDetails from './useProductDetails'
+import { ProductDetailsProps } from './ProductDetails.types'
 
-const ProductDetails = () => {
-  const { data, isLoading, isError } = useProductDetails()
+const ProductDetails = ({
+  data,
+  isLoading,
+  isError,
+  quantity,
+  handleQuantityChange,
+}: ProductDetailsProps) => {
+  const { addItem } = useCartContext()
 
+  const cartItem = data?.data
   const product = data?.data.attributes
   const url = product?.img.data.attributes.url
+  const id = data?.data.id
 
   if (isLoading) {
     return <h2 className='text-center text-2xl'>Loading...</h2>
@@ -47,11 +56,22 @@ const ProductDetails = () => {
               <input
                 className='rounded-md px-2 py-1 text-xl outline-transparent md:text-2xl'
                 id='quantity'
+                min={1}
+                max={10}
+                onChange={handleQuantityChange}
+                value={quantity}
                 type='number'
               />
             </form>
           </div>
-          <Button tertiary>Add to cart</Button>
+          <Button
+            onClick={() =>
+              cartItem && id && addItem({ item: cartItem, quantity, id })
+            }
+            tertiary
+          >
+            Add to cart
+          </Button>
         </div>
       </div>
       <Link to='/products'>
@@ -60,4 +80,5 @@ const ProductDetails = () => {
     </div>
   )
 }
+
 export default ProductDetails
