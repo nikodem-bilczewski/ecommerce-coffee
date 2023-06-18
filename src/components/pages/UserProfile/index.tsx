@@ -5,9 +5,8 @@ import Button from 'components/molecules/Button'
 import useAuthContext from 'contexts/AuthContext/useAuthContext'
 
 const UserProfile = () => {
-  const { logOut } = useAuthContext()
-  const user = JSON.parse(localStorage.getItem('user')!)
-  const { username } = user.user
+  const { user, logOut } = useAuthContext()
+  const username = user?.user?.username ?? ''
   return (
     <div className='flex flex-col justify-between  h-screen w-full mx-auto px-6 lg:px-8'>
       <div className='flex w-full md:w-4/5 mt-16 flex-col mx-auto'>
