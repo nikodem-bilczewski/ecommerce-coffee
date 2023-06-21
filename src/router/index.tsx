@@ -1,6 +1,7 @@
 import { RouteObject } from 'react-router'
 
 import {
+  Checkout,
   Events,
   Home,
   Layout,
@@ -28,6 +29,7 @@ const routes: RouteObject[] = [
       { path: 'login', element: <LogIn /> },
       { path: 'signup', element: <SignUp /> },
       { path: 'user', element: <UserProfile /> },
+      { path: 'checkout', element: <Checkout /> },
     ],
   },
 ]
