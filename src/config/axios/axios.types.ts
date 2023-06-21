@@ -1,5 +1,6 @@
+import { IUser } from 'contexts/AuthContext/AuthContext.types'
+
 export interface AuthResponse {
-  accessToken?: string
-  refreshToken?: string
-  error?: string
+  jwt: string
+  user: IUser['user']
 }

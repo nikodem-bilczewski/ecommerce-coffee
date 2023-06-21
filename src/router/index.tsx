@@ -9,6 +9,7 @@ import {
   ProductDetailsPage,
   Products,
   SignUp,
+  UserProfile,
 } from 'components/pages'
 
 const routes: RouteObject[] = [
@@ -26,6 +27,7 @@ const routes: RouteObject[] = [
       { path: 'newsletter', element: <Newsletter /> },
       { path: 'login', element: <LogIn /> },
       { path: 'signup', element: <SignUp /> },
+      { path: 'user', element: <UserProfile /> },
     ],
   },
 ]

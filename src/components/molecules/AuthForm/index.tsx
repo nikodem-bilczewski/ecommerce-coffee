@@ -22,7 +22,15 @@ const AuthForm = ({ isLogInForm = false }: AuthFormProps) => {
           action='#'
           method='POST'
         >
-          <Input label='Email Address' type='email' name='email' />
+          {!isLogInForm && (
+            <div className='flex flex-col gap-6'>
+              <Input label='Username' type='text' name='username' />
+              <Input label='Email Address' type='email' name='email' />
+            </div>
+          )}
+          {isLogInForm && (
+            <Input label='Email Address' type='email' name='identifier' />
+          )}
           <Input label='Password' type='password' name='password' />
           {isLogInForm && (
             <div className='flex justify-end'>

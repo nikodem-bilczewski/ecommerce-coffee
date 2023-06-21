@@ -1,15 +1,15 @@
 import { zodResolver } from '@hookform/resolvers/zod'
 import { useMutation } from '@tanstack/react-query'
-import { AuthContext } from 'contexts/AuthContext'
-import { useContext } from 'react'
 import { SubmitHandler, useForm } from 'react-hook-form'
+
+import useAuthContext from 'contexts/AuthContext/useAuthContext'
 import { logInFn, signUpFn } from 'services/auth'
 
 import { AuthFormProps, FormInput } from './AuthForm.types'
 import { authSchema } from './authSchema'
 
 const useAuthForm = ({ isLogInForm = false }: AuthFormProps) => {
-  const { logIn } = useContext(AuthContext)
+  const { logIn } = useAuthContext()
 
   const mutationFn = isLogInForm ? logInFn : signUpFn
 
@@ -21,6 +21,7 @@ const useAuthForm = ({ isLogInForm = false }: AuthFormProps) => {
     mutationFn,
     onSuccess: (userData) => {
       logIn(userData)
+      methods.reset()
     },
   })
 
@@ -30,7 +31,6 @@ const useAuthForm = ({ isLogInForm = false }: AuthFormProps) => {
 
   const onSubmit: SubmitHandler<FormInput> = async (userData) => {
     performMutation(userData)
-    methods.reset()
   }
 
   return {
