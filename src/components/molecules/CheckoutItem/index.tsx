@@ -1,8 +1,9 @@
+import ItemDetails from 'components/atoms/ItemDetails'
 import { CartItem } from 'contexts/CartContext/CartContext.types'
 
 const CheckoutItem = ({ cartItem }: { cartItem: CartItem }) => {
   const { quantity } = cartItem
-  const { title, price } = cartItem.item.attributes
+  const { title, price, currency } = cartItem.item.attributes
   const { url } = cartItem.item.attributes.img.data.attributes
 
   return (
@@ -16,18 +17,13 @@ const CheckoutItem = ({ cartItem }: { cartItem: CartItem }) => {
         <h2 className='text-2xl'>{title}</h2>
       </div>
       <div className='flex justify-between sm:w-[24rem] md:w-[26rem] items-center'>
-        <div className='w-1/2 sm:w-auto'>
-          <p className='sm:hidden'>Quantity</p>
-          <span className='text-xl'>{quantity}</span>
-        </div>
-        <div>
-          <p className='sm:hidden'>Price</p>
-          <span className='text-xl'>{price} PLN</span>
-        </div>
-        <div>
-          <p className='sm:hidden'>Total</p>
-          <span className='text-xl'>{quantity * price} PLN</span>
-        </div>
+        <ItemDetails label='Quantity' value={quantity} />
+        <ItemDetails label='Price' value={price} currency={currency} />
+        <ItemDetails
+          label='Total'
+          value={price * quantity}
+          currency={currency}
+        />
       </div>
     </div>
   )
