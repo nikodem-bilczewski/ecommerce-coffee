@@ -1,5 +1,6 @@
 import XMarkIcon from '@heroicons/react/24/outline/XMarkIcon'
 import classNames from 'classnames'
+import { Link } from 'react-router-dom'
 
 import IconWrapper from 'components/atoms/IconWrapper'
 import Button from 'components/molecules/Button'
@@ -43,7 +44,13 @@ const Cart = () => {
         {totalPrice > 0 && (
           <h2 className='text-xl md:text-2xl mb-3'>Total: {totalPrice} PLN</h2>
         )}
-        {totalItems > 0 && <Button secondary>Checkout</Button>}
+        {totalItems > 0 && (
+          <Link to='/checkout'>
+            <Button onClick={toggleCart} secondary>
+              Checkout
+            </Button>
+          </Link>
+        )}
       </div>
     </div>
   )

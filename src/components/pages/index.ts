@@ -7,3 +7,4 @@ export { default as ProductDetailsPage } from 'components/pages/ProductDetailsPa
 export { default as Products } from 'components/pages/Products'
 export { default as SignUp } from 'components/pages/SignUp'
 export { default as UserProfile } from 'components/pages/UserProfile'
+export { default as Checkout } from 'components/pages/Checkout'
