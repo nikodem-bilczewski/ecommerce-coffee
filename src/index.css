@@ -20,6 +20,9 @@
   .cart {
     @apply fixed z-40 flex h-full w-[30rem] flex-col justify-between overflow-y-auto bg-stone-200 shadow-md transition-all duration-500 md:w-[42rem];
   }
+  .menu-icon {
+    @apply h-10 w-10 cursor-pointer rounded-md hover:bg-black hover:bg-opacity-10;
+  }
 }
 
 html {

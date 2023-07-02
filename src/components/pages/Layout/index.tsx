@@ -22,7 +22,7 @@ const Layout = () => {
       {isOpen && <Overlay />}
       <Cart />
       <Header />
-      <main>
+      <main className='pt-24'>
         <Outlet />
       </main>
       <Footer />
