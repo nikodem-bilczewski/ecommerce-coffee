@@ -7,7 +7,7 @@ const NavigationButtons = () => {
 
   return (
     <nav>
-      <ul className='flex justify-center'>
+      <ul className='hidden md:flex justify-center'>
         {navButtons &&
           navButtons.map(({ navigateTo, btnText }) => (
             <li key={navigateTo}>
