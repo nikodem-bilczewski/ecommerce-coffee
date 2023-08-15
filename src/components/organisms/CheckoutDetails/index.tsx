@@ -1,11 +1,23 @@
+import { useState } from 'react'
+
 import CheckoutForm from 'components/molecules/CheckoutForm'
 import CheckoutItem from 'components/molecules/CheckoutItem'
 import EmptyCart from 'components/molecules/EmptyCart'
 import Labels from 'components/molecules/Labels'
+import SuccessfulSubmit from 'components/molecules/SuccessfulSubmit'
 import useCartContext from 'contexts/CartContext/useCartContext'
 
 const CheckoutDetails = () => {
   const { cart, totalPrice } = useCartContext()
+  const [isSubmitted, setIsSubmitted] = useState(false)
+
+  const handleFormSubmit = () => {
+    if (!isSubmitted) {
+      setIsSubmitted(true)
+    }
+  }
+
+  if (isSubmitted) return <SuccessfulSubmit />
 
   if (cart.length <= 0) return <EmptyCart />
 
@@ -32,7 +44,7 @@ const CheckoutDetails = () => {
             </h3>
           </div>
         </div>
-        <CheckoutForm />
+        <CheckoutForm onFormSubmit={handleFormSubmit} />
       </div>
     </>
   )
