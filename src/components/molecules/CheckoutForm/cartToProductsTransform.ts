@@ -8,7 +8,5 @@ export const cartToProductsTransform = (cartData: CartItem[]): CartProduct[] =>
     price: cartItem.item.attributes.price,
     quantity: cartItem.quantity,
     total: cartItem.item.attributes.price * cartItem.quantity,
-    img: '',
+    img: cartItem.item.attributes.img.data.attributes.url,
   }))
-
-// cartItem.item.attributes.img.data.attributes.url
