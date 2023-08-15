@@ -10,14 +10,12 @@ export const getProducts = async (
   perPage = 6,
 ) => {
   const response = await productsAPI.get<ProductsResponse>(
-    `/api/items?populate=*&pagination[page]=${page}&pagination[pageSize]=${perPage}&filters[category][$containsi]=${selectedCategory}`,
+    `?populate=*&pagination[page]=${page}&pagination[pageSize]=${perPage}&filters[category][$containsi]=${selectedCategory}`,
   )
   return response.data
 }
 
 export const getProduct = async (id: string | undefined) => {
-  const response = await productsAPI.get<ProductResponse>(
-    `/api/items/${id}?populate=*`,
-  )
+  const response = await productsAPI.get<ProductResponse>(`/${id}?populate=*`)
   return response.data
 }
