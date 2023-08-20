@@ -14,7 +14,7 @@ const OrderDetails = ({
 }: OrderDetailsProps) => (
   <div className='flex flex-col justify-between gap-10 px-10 py-8 w-full md:w-4/5 lg:w-3/5 mx-auto'>
     <div>
-      <h2 className='text-3xl'>Order from {date}</h2>
+      <p className='text-3xl'>Order from {date}</p>
       <p className='text-lg'>Total items: {totalItems}</p>
     </div>
     <div className='flex flex-col gap-5'>
@@ -30,10 +30,9 @@ const OrderDetails = ({
           />
         ))}
     </div>
-    <h2 className='text-right text-3xl'>
-      Total: {total}
-      {currency}
-    </h2>
+    <p className='text-right text-3xl'>
+      Total: {total} {currency}
+    </p>
     <Link to='/user'>
       <Button secondary>Back</Button>
     </Link>
