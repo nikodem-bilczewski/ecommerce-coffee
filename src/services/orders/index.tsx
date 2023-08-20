@@ -2,43 +2,30 @@ import { Order } from 'components/molecules/CheckoutForm/checkoutForm.types'
 import { ordersAPI } from 'config/axios'
 import { OrderResponse, OrdersResponse } from 'config/axios/axios.types'
 
-export const createOrder = async (token: string, data: Order) => {
-  const response = await ordersAPI.post<OrderResponse>('', data, {
-    headers: {
-      Authorization: `Bearer ${token}`,
-      'Content-Type': 'application/json',
-    },
-  })
+import { orderResponseSchema, ordersResponseSchema } from './ordersSchema'
+
+export const createOrder = async (data: Order) => {
+  const response = await ordersAPI.post<OrderResponse>('', data, {})
   return response.data
 }
 
 export const getOrders = async (
-  token: string | undefined,
   id: number | undefined,
   page: number,
   perPage = 8,
 ) => {
   const response = await ordersAPI.get<OrdersResponse>(
     `?filters[user_id][$eq]=${id}&populate=*&pagination[page]=${page}&pagination[pageSize]=${perPage}`,
-    {
-      headers: {
-        Authorization: `Bearer ${token}`,
-        'Content-Type': 'application/json',
-      },
-    },
   )
-  return response.data
+  const parsedResponse = ordersResponseSchema.parse(response.data)
+
+  return parsedResponse
 }
 
-export const getOrder = async (
-  token: string | undefined,
-  id: string | undefined,
-) => {
-  const response = await ordersAPI.get<OrderResponse>(`/${id}?populate=*`, {
-    headers: {
-      Authorization: `Bearer ${token}`,
-      'Content-Type': 'application/json',
-    },
-  })
-  return response.data
+export const getOrder = async (id: string | undefined) => {
+  const response = await ordersAPI.get<OrderResponse>(`/${id}?populate=*`, {})
+
+  const parsedResponse = orderResponseSchema.parse(response.data)
+
+  return parsedResponse.data
 }
