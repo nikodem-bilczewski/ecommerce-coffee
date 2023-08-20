@@ -1,16 +1,8 @@
 import { Controller, useFormContext } from 'react-hook-form'
 
-type RadioOption = {
-  label: string
-  value: string
-  img: string
-}
+import Option from 'components/atoms/Option'
 
-type RadioInputProps = {
-  label: string
-  name: string
-  options: RadioOption[]
-}
+import { RadioInputProps } from './RadioInput.types'
 
 const RadioInput = ({ label, name, options }: RadioInputProps) => {
   const {
@@ -33,24 +25,13 @@ const RadioInput = ({ label, name, options }: RadioInputProps) => {
         render={({ field }) => (
           <div className='flex justify-around gap-10'>
             {options.map((option) => (
-              <div key={option.value} className='mt-2'>
-                <div className='flex items-center mb-1'>
-                  <input
-                    type='radio'
-                    value={option.value}
-                    checked={field.value === option.value}
-                    onChange={(e) => field.onChange(e.target.value)}
-                    className='mr-2'
-                  />
-                  <label
-                    htmlFor={`${name}_${option.value}`}
-                    className='text-xl md:text-2xl'
-                  >
-                    {option.label}
-                  </label>
-                </div>
-                <img src={option.img} className='h-24 w-44' />
-              </div>
+              <Option
+                key={option.value}
+                option={option}
+                checked={field.value === option.value}
+                onChange={() => field.onChange(option.value)}
+                name={name}
+              />
             ))}
           </div>
         )}
