@@ -21,6 +21,6 @@ export const checkoutSchema = object({
   city: string()
     .min(1, 'City is required')
     .max(25, 'City must be between 1-25 characters'),
-  delivery: string().nonempty('Required'),
-  payment: string().nonempty('Required'),
+  delivery: string(),
+  payment: string(),
 })

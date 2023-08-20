@@ -6,26 +6,23 @@ import useOrderDetails from './useOrderDetails'
 const OrderDetailsPage = () => {
   const { order, isLoading, isError } = useOrderDetails()
 
-  const date = order?.attributes.date
-  const currency = order?.attributes.currency
-  const products = order?.attributes.products
-  const total = order?.attributes.total
-  const totalItems = products?.reduce(
-    (totalQuantity, product) => totalQuantity + product.quantity,
-    0,
-  )
-
   if (isLoading) {
     return <h2 className='text-center text-2xl'>Loading...</h2>
   }
 
-  if (isError) {
+  if (isError || !order) {
     return (
       <h2 className='text-center text-2xl'>
         An error occured. Could not fetch product.
       </h2>
     )
   }
+
+  const { date, currency, products, total } = order?.attributes
+  const totalItems = products?.reduce(
+    (totalQuantity, product) => totalQuantity + product.quantity,
+    0,
+  )
 
   return (
     <OrderDetails

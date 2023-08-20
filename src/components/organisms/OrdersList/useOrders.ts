@@ -10,12 +10,11 @@ const useOrders = () => {
   )
   const { user } = useAuthContext()
 
-  const jwt = user?.jwt
   const id = user?.user.id
 
   const { isLoading, isError, data } = useQuery({
     queryKey: ['orders', currentPage],
-    queryFn: () => getOrders(jwt, id, currentPage),
+    queryFn: () => getOrders(id, currentPage),
   })
 
   const orders = data?.data

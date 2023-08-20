@@ -16,16 +16,12 @@ const useCheckoutForm = () => {
   const { user } = useAuthContext()
   const { cart, totalPrice, clearCart } = useCartContext()
 
-  const { mutate, isLoading, isSuccess, isError } = useMutation(
-    ({ token, order }: { token: string; order: Order }) =>
-      createOrder(token, order),
-    {
-      onSuccess: () => {
-        methods.reset()
-        clearCart()
-      },
+  const { mutate, isLoading, isSuccess, isError } = useMutation(createOrder, {
+    onSuccess: () => {
+      methods.reset()
+      clearCart()
     },
-  )
+  })
 
   const methods = useForm<FormInput>({
     resolver: zodResolver(checkoutSchema),
@@ -33,7 +29,6 @@ const useCheckoutForm = () => {
 
   const onSubmit = async () => {
     if (user) {
-      const { jwt } = user
       const { id } = user.user
       const date = getCurrentDate()
       const products = cartToProductsTransform(cart)
@@ -48,7 +43,7 @@ const useCheckoutForm = () => {
         },
       }
 
-      mutate({ token: jwt, order })
+      mutate(order)
     } else {
       methods.reset()
       clearCart()

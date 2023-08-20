@@ -21,7 +21,7 @@ const CheckoutForm = ({ onFormSubmit }: { onFormSubmit: () => void }) => {
 
   return (
     <div className='w-full xl:w-1/2'>
-      <h2 className='text-3xl xl:text-4xl mb-5'>Personal Details</h2>
+      <p className='text-3xl xl:text-4xl mb-5'>Personal Details</p>
       <FormProvider {...methods}>
         <form
           onSubmit={methods.handleSubmit(handleFormSubmit)}
@@ -40,7 +40,7 @@ const CheckoutForm = ({ onFormSubmit }: { onFormSubmit: () => void }) => {
               <Input label='City' type='text' name='city' />
             </div>
           </div>
-          <h2 className='text-3xl xl:text-4xl'>Delivery</h2>
+          <p className='text-3xl xl:text-4xl'>Delivery</p>
           <div className='flex justify-start'>
             <RadioInput
               label='Select an option'
@@ -48,7 +48,7 @@ const CheckoutForm = ({ onFormSubmit }: { onFormSubmit: () => void }) => {
               options={deliveryOptions}
             />
           </div>
-          <h2 className='text-3xl xl:text-4xl'>Payment</h2>
+          <p className='text-3xl xl:text-4xl'>Payment</p>
           <div className='flex justify-start'>
             <RadioInput
               label='Select an option'
@@ -65,9 +65,9 @@ const CheckoutForm = ({ onFormSubmit }: { onFormSubmit: () => void }) => {
       </FormProvider>
       {isLoading && <Spinner />}
       {isError && (
-        <h2 className='mt-8 text-center text-2xl font-light'>
+        <p className='mt-8 text-center text-2xl font-light'>
           An error occured. Could not make an order.
-        </h2>
+        </p>
       )}
     </div>
   )
