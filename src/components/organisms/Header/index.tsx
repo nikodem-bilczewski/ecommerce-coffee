@@ -1,6 +1,5 @@
 import Bars3Icon from '@heroicons/react/24/outline/Bars3Icon'
 import XMarkIcon from '@heroicons/react/24/outline/XMarkIcon'
-import { useEffect } from 'react'
 
 import Logo from 'components/atoms/Logo'
 import DropdownMenu from 'components/molecules/DropdownMenu'
@@ -10,15 +9,7 @@ import NavigationIcons from 'components/molecules/NavigationIcons'
 import useHeader from './useHeader'
 
 const Header = () => {
-  const { isOpen, headerRef, toggleMenu, handleClickOutside } = useHeader()
-
-  useEffect(() => {
-    document.addEventListener('mousedown', handleClickOutside)
-
-    return () => {
-      document.removeEventListener('mousedown', handleClickOutside)
-    }
-  }, [isOpen])
+  const { isOpen, headerRef, toggleMenu } = useHeader()
 
   return (
     <div ref={headerRef}>
@@ -36,7 +27,7 @@ const Header = () => {
           )}
         </div>
       </header>
-      {isOpen && <DropdownMenu clickHandler={toggleMenu} />}
+      {isOpen && <DropdownMenu onClick={toggleMenu} />}
     </div>
   )
 }

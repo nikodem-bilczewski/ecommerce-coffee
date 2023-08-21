@@ -1,4 +1,4 @@
-import { useRef, useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 
 const useHeader = () => {
   const [isOpen, setIsOpen] = useState(false)
@@ -18,11 +18,18 @@ const useHeader = () => {
     }
   }
 
+  useEffect(() => {
+    document.addEventListener('mousedown', handleClickOutside)
+
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside)
+    }
+  }, [isOpen])
+
   return {
     isOpen,
     headerRef,
     toggleMenu,
-    handleClickOutside,
   }
 }
 
