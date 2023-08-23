@@ -9,7 +9,7 @@ export const checkoutSchema = object({
     .min(1, 'Last name is required')
     .max(15, 'Last name must be between 1-15 characters'),
   email: string()
-    .min(1, 'Email address is required')
+    .nonempty('Email address is required')
     .email('Email address is invalid'),
   address: string()
     .min(1, 'Address is required')
@@ -21,6 +21,10 @@ export const checkoutSchema = object({
   city: string()
     .min(1, 'City is required')
     .max(25, 'City must be between 1-25 characters'),
-  delivery: string(),
-  payment: string(),
+  delivery: string({
+    required_error: 'Required',
+  }),
+  payment: string({
+    required_error: 'Required',
+  }),
 })
