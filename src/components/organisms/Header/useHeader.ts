@@ -9,12 +9,13 @@ const useHeader = () => {
   }
 
   const handleClickOutside = (e: MouseEvent) => {
+    const target = e.target as Node
     if (
       headerRef.current &&
-      !headerRef.current.contains(e.target as Node) &&
-      isOpen
+      target instanceof Node &&
+      !headerRef.current.contains(target)
     ) {
-      setIsOpen((isOpen) => !isOpen)
+      setIsOpen(false)
     }
   }
 
