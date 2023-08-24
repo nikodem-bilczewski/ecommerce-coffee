@@ -21,7 +21,7 @@ export interface Product {
   }
 }
 
-interface metaData {
+export interface metaData {
   pagination: {
     page: number
     pageCount: number

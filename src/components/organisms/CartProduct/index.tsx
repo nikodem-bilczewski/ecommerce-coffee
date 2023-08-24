@@ -16,7 +16,7 @@ const CartProduct = ({ item }: CartProductProps) => {
     <div className='flex justify-between bg-stone-100 mx-10 gap-2 items-center p-4 rounded-md shadow-md'>
       <div className='flex'>
         <img
-          src={import.meta.env.VITE_BASE_URL + img}
+          src={img}
           alt={title}
           className='hidden md:block sm:w-[10rem] sm:h-[10rem] object-cover'
         />

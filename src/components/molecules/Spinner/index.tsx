@@ -1,7 +1,7 @@
 const Spinner = () => (
   <svg
     role='status'
-    className=' mx-auto w-full  h-12 mr-2 text-gray-400 animate-spin  fill-gray-200'
+    className=' mx-auto w-full mt-8 h-12 text-gray-400 animate-spin  fill-gray-200'
     viewBox='0 0 100 101'
     fill='none'
     xmlns='http://www.w3.org/2000/svg'

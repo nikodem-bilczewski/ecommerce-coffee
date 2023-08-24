@@ -1,4 +1,4 @@
-import { useRef, useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 
 const useHeader = () => {
   const [isOpen, setIsOpen] = useState(false)
@@ -9,20 +9,28 @@ const useHeader = () => {
   }
 
   const handleClickOutside = (e: MouseEvent) => {
+    const target = e.target as Node
     if (
       headerRef.current &&
-      !headerRef.current.contains(e.target as Node) &&
-      isOpen
+      target instanceof Node &&
+      !headerRef.current.contains(target)
     ) {
-      setIsOpen((isOpen) => !isOpen)
+      setIsOpen(false)
     }
   }
+
+  useEffect(() => {
+    document.addEventListener('mousedown', handleClickOutside)
+
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside)
+    }
+  }, [isOpen])
 
   return {
     isOpen,
     headerRef,
     toggleMenu,
-    handleClickOutside,
   }
 }
 

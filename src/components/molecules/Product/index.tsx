@@ -20,7 +20,7 @@ const Product = ({ product }: ProductProps) => {
         onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
       >
         <img
-          src={import.meta.env.VITE_BASE_URL + img}
+          src={img}
           className='mb-2 aspect-[1/1] h-full w-full rounded-md object-fill object-center'
         />
 

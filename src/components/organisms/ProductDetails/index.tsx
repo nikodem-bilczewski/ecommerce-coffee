@@ -36,7 +36,7 @@ const ProductDetails = ({
       <div className='mx-auto md:my-26 lg:my-28 flex w-full flex-col gap-7 rounded-lg bg-stone-200 p-7 shadow-xl  lg:flex-row'>
         <img
           className='aspect-[1/1] h-full w-full rounded-md object-fill object-center md:mb-0 md:max-w-xl '
-          src={import.meta.env.VITE_BASE_URL + url}
+          src={url}
         />
         <div className='flex flex-col justify-between'>
           <div>

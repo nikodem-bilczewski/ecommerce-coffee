@@ -1,3 +1,4 @@
+/* eslint-disable camelcase */
 import { object, string } from 'zod'
 
 export const checkoutSchema = object({
@@ -8,10 +9,10 @@ export const checkoutSchema = object({
     .min(1, 'Last name is required')
     .max(15, 'Last name must be between 1-15 characters'),
   email: string()
-    .min(1, 'Email address is required')
+    .nonempty('Email address is required')
     .email('Email address is invalid'),
   address: string()
-    .min(1, 'Address address is required')
+    .min(1, 'Address is required')
     .max(25, 'Address must be between 1-25 characters'),
   zip: string().refine(
     (value) => /^\d{2}-\d{3}$/.test(value),
@@ -20,4 +21,10 @@ export const checkoutSchema = object({
   city: string()
     .min(1, 'City is required')
     .max(25, 'City must be between 1-25 characters'),
+  delivery: string({
+    required_error: 'Required',
+  }),
+  payment: string({
+    required_error: 'Required',
+  }),
 })
