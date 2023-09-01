@@ -20,6 +20,10 @@ export const ordersAPI = axios.create({
   },
 })
 
+export const emailAPI = axios.create({
+  baseURL: import.meta.env.VITE_BASE_URL + '/email',
+})
+
 ordersAPI.interceptors.request.use((config) => {
   const user: User = JSON.parse(localStorage.getItem('user') || '')
   const token = user?.jwt
