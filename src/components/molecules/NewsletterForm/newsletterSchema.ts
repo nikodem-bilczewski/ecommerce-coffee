@@ -1,5 +1,5 @@
 /* eslint-disable camelcase */
-import { literal, object, string } from 'zod'
+import { boolean, object, string } from 'zod'
 
 export const newsletterSchema = object({
   name: string()
@@ -8,7 +8,7 @@ export const newsletterSchema = object({
   email: string()
     .nonempty('Email address is required')
     .email('Email address is invalid'),
-  terms: literal(true, {
-    errorMap: () => ({ message: 'You must accept terms and conditions' }),
+  terms: boolean().refine((checkbox) => checkbox === true, {
+    message: 'You must accept terms and conditions',
   }),
 })
