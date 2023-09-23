@@ -1,16 +1,14 @@
 import { FormProvider } from 'react-hook-form'
 
 import Input from 'components/atoms/FormInput'
+import useAuthForm from 'components/molecules/AuthForm/useAuthForm'
 import Button from 'components/molecules/Button'
 import ErrorMessage from 'components/molecules/ErrorMessage'
 import Spinner from 'components/molecules/Spinner'
 
-import { AuthFormProps } from './AuthForm.types'
-import useAuthForm from './useAuthForm'
-
-const AuthForm = ({ isLogInForm = false }: AuthFormProps) => {
+const SignUpForm = () => {
   const { methods, onSubmit, isLoading, isError } = useAuthForm({
-    isLogInForm,
+    isLogInForm: false,
   })
 
   return (
@@ -22,33 +20,22 @@ const AuthForm = ({ isLogInForm = false }: AuthFormProps) => {
           action='#'
           method='POST'
         >
-          {!isLogInForm && (
-            <div className='flex flex-col gap-6'>
-              <Input
-                label='Username'
-                type='text'
-                name='username'
-                darkLabel
-                text
-              />
-              <Input
-                label='Email Address'
-                type='email'
-                name='email'
-                darkLabel
-                text
-              />
-            </div>
-          )}
-          {isLogInForm && (
+          <div className='flex flex-col gap-6'>
             <Input
-              label='Email Address'
-              type='email'
-              name='identifier'
+              label='Username'
+              type='text'
+              name='username'
               darkLabel
               text
             />
-          )}
+            <Input
+              label='Email Address'
+              type='email'
+              name='email'
+              darkLabel
+              text
+            />
+          </div>
           <Input
             label='Password'
             type='password'
@@ -56,19 +43,9 @@ const AuthForm = ({ isLogInForm = false }: AuthFormProps) => {
             darkLabel
             text
           />
-          {isLogInForm && (
-            <div className='flex justify-end'>
-              <a
-                href='#'
-                className='text-gray-700 hover:text-gray-900 text-lg md:text-xl font-extralight md:font-light'
-              >
-                Forgot password?
-              </a>
-            </div>
-          )}
           <div className='w-full'>
             <Button type='submit' secondary disabled={isLoading}>
-              {isLogInForm ? 'Log in' : 'Sign up'}
+              Sign up
             </Button>
           </div>
           {isLoading && <Spinner />}
@@ -79,4 +56,4 @@ const AuthForm = ({ isLogInForm = false }: AuthFormProps) => {
   )
 }
 
-export default AuthForm
+export default SignUpForm
