@@ -1,15 +1,14 @@
 import { FormProvider } from 'react-hook-form'
 
 import Input from 'components/atoms/FormInput'
-import useAuthForm from 'components/molecules/AuthForm/useAuthForm'
 import Button from 'components/molecules/Button'
 import ErrorMessage from 'components/molecules/ErrorMessage'
 import Spinner from 'components/molecules/Spinner'
 
+import useSignUpForm from './useSignUpForm'
+
 const SignUpForm = () => {
-  const { methods, onSubmit, isLoading, isError } = useAuthForm({
-    isLogInForm: false,
-  })
+  const { methods, onSubmit, isLoading, isError } = useSignUpForm()
 
   return (
     <>
