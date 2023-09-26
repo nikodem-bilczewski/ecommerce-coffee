@@ -1,9 +1,9 @@
-import AuthForm from 'components/molecules/AuthForm'
+import SignUpForm from 'components/molecules/SignUpForm'
 import FormWrapper from 'components/organisms/FormWrapper'
 
 const SignUp = () => (
   <FormWrapper>
-    <AuthForm />
+    <SignUpForm />
   </FormWrapper>
 )
 export default SignUp

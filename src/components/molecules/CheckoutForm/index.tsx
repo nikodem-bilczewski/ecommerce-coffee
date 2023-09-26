@@ -28,16 +28,22 @@ const CheckoutForm = ({ onFormSubmit }: { onFormSubmit: () => void }) => {
           method='POST'
           className='space-y-4'
         >
-          <Input label='First Name' type='text' name='firstName' />
-          <Input label='Last Name' type='text' name='lastName' />
-          <Input label='Email' type='email' name='email' />
-          <Input label='Address' type='text' name='address' />
+          <Input
+            label='First Name'
+            type='text'
+            name='firstName'
+            text
+            darkLabel
+          />
+          <Input label='Last Name' type='text' name='lastName' text darkLabel />
+          <Input label='Email' type='email' name='email' text darkLabel />
+          <Input label='Address' type='text' name='address' text darkLabel />
           <div className='flex justify-between gap-10 pb-5'>
             <div className='w-1/3'>
-              <Input label='ZIP Code' type='text' name='zip' />
+              <Input label='ZIP Code' type='text' name='zip' text darkLabel />
             </div>
             <div className='w-2/3'>
-              <Input label='City' type='text' name='city' />
+              <Input label='City' type='text' name='city' text darkLabel />
             </div>
           </div>
           <p className='text-3xl xl:text-4xl'>Delivery</p>
