@@ -1,6 +1,5 @@
 <h1>React & Typescript E-commerce</h1>
 
-## About 📝
 
 E-commerce shop built using React & Typescript and Strapi as a backend (deployed on AWS). Adapted for both desktop and mobile devices.
 Main features: 
