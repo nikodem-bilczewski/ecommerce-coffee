@@ -35,6 +35,10 @@ const Input = ({
         text,
     },
     {
+      'block w-full mt-1 rounded-md border-0 text-xl font-light px-2 sm:text-2xl py-2 text-gray-900 outline-none focus:ring-2 focus:ring-opacity-80 focus:ring-red-500  placeholder:text-gray-400 sm:leading-6':
+        errors[name],
+    },
+    {
       'rounded-md border-0 text-xl font-light sm:text-2xl text-gray-900 outline-none focus:ring-2 focus:ring-opacity-80 focus:ring-blue-400':
         checkbox,
     },

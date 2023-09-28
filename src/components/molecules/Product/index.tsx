@@ -26,7 +26,7 @@ const Product = ({ product }: ProductProps) => {
 
         <h3 className='text-3xl'>{title}</h3>
       </Link>
-      <p className='mb-1 mt-6 text-2xl font-light'>
+      <p className='my-2 text-2xl font-light'>
         {price} {currency}
       </p>
       <Button

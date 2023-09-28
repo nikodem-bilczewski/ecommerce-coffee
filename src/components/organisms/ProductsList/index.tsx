@@ -1,6 +1,7 @@
 import Filters from 'components/molecules/Filters'
 import PaginationButtons from 'components/molecules/PaginationButtons'
 import Product from 'components/molecules/Product'
+import Spinner from 'components/molecules/Spinner'
 
 import useProducts from './useProducts'
 
@@ -17,7 +18,7 @@ const ProductList = () => {
   } = useProducts()
 
   if (isLoading) {
-    return <h2 className='text-center text-2xl'>Loading...</h2>
+    return <Spinner />
   }
 
   if (isError) {
@@ -29,7 +30,7 @@ const ProductList = () => {
   }
 
   return (
-    <section className='mx-auto w-4/5'>
+    <section className='mx-auto w-full'>
       <Filters
         selectedCategory={selectedCategory}
         handleCategoryChange={handleCategoryChange}
