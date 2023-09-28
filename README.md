@@ -5,7 +5,7 @@
 E-commerce shop built using React & Typescript and Strapi as a backend (deployed on AWS). Adapted for both desktop and mobile devices.
 Main features: 
 - signup/login
-- displaying products
+- displaying products with pagination
 - filtering products by categories
 - adding product(s) to cart
 - placing orders
