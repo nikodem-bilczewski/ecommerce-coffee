@@ -2,7 +2,8 @@
 
 ## About 📝
 
-E-commerce shop built using React & Typescript and Strapi as a backend (deployed on AWS). Main features: 
+E-commerce shop built using React & Typescript and Strapi as a backend (deployed on AWS). Adapted for both desktop and mobile devices.
+Main features: 
 - signup/login
 - displaying products
 - filtering products by categories
@@ -10,6 +11,7 @@ E-commerce shop built using React & Typescript and Strapi as a backend (deployed
 - placing orders
 - storage of order history for logged-in users
 - sending email with confirmation after joining newsletter
+
 
 
 ## Technologies 🔧
