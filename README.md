@@ -6,8 +6,6 @@ Main features:
 - signup/login
 - displaying products with pagination
 - filtering products by categories
-- adding product(s) to cart
-- placing orders
 - storage of order history for logged-in users
 - sending email with confirmation after joining newsletter
 
