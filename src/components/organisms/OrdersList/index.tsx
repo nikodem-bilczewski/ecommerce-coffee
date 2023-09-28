@@ -37,6 +37,9 @@ const OrdersList = () => {
               totalPrice={attributes.total}
             />
           ))}
+        {orders && orders.length <= 0 && (
+          <p>You haven't placed any order in our store.</p>
+        )}
       </div>
       {totalPages && (
         <PaginationButtons

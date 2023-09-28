@@ -3,7 +3,7 @@ import ShopContact from 'components/molecules/ShopContact'
 
 const Footer = () => (
   <footer className='w-full bg-stone-400'>
-    <div className='mx-auto mb-10 grid w-full place-items-center border-t border-t-gray-500 px-5 pt-10 text-center md:mb-16 md:grid-cols-2'>
+    <div className='mx-auto mb-10 grid w-full place-items-center px-5 pt-10 text-center md:mb-16 md:grid-cols-2'>
       <ShopContact />
       <FooterInfo />
     </div>

@@ -19,7 +19,7 @@ const Option = ({ option, checked, onChange, name }: OptionProps) => (
         {option.label}
       </label>
     </div>
-    <img src={option.img} className='h-24 w-44' alt={option.label} />
+    <img src={option.img} className='h-24 w-44 rounded-lg' alt={option.label} />
   </div>
 )
 

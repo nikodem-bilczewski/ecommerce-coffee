@@ -23,12 +23,9 @@ const CheckoutDetails = () => {
 
   return (
     <>
-      <div className='flex w-full mt-16 flex-col mx-auto'>
-        <div className='flex justify-between'>
-          <h1 className='self-start text-4xl font-normal'>Checkout</h1>
-        </div>
-        <span className='mb-5 h-1 w-full border-b border-gray-400'></span>
-      </div>
+      <h1 className='py-16 text-5xl font-bold text-center lg:text-6xl'>
+        Checkout
+      </h1>
       <div className='flex flex-col xl:flex-row justify-between gap-16 xl:gap-32 mb-10'>
         <div className='flex flex-col justify-between w-full py-2 xl:w-1/2'>
           <Labels />

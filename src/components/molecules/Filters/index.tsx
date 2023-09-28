@@ -18,7 +18,7 @@ const Filters = ({ selectedCategory, handleCategoryChange }: FiltersProps) => {
             onChange={handleCategoryChange}
           />
           <label
-            className='text-md sm:text-xl md:text-2xl md:font-normal text-gray-900 bg-black bg-opacity-10 rounded-md px-2 py-1 sm:px-4 sm:py-2 cursor-pointer peer-checked:bg-opacity-25'
+            className='text-2xl text-gray-900 bg-black bg-opacity-10 rounded-md px-2 py-1 sm:px-4 sm:py-2 cursor-pointer peer-checked:bg-opacity-25'
             htmlFor={id}
           >
             {id}

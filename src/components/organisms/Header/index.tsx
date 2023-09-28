@@ -13,7 +13,7 @@ const Header = () => {
 
   return (
     <div ref={headerRef}>
-      <header className='fixed z-10 mx-auto flex h-24 w-full items-center justify-between border-b border-b-gray-500 bg-stone-400 p-7 xl:p-9'>
+      <header className='fixed z-10 mx-auto flex h-24 w-full items-center justify-between bg-stone-400 p-7 xl:p-9'>
         <Logo />
         <NavigationButtons />
         <div className='hidden md:flex'>

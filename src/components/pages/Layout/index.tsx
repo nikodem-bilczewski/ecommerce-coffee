@@ -22,7 +22,7 @@ const Layout = () => {
       {isOpen && <Overlay />}
       <Cart />
       <Header />
-      <main className='pt-24'>
+      <main className='flex flex-col justify-center flex-1 pt-24'>
         <Outlet />
       </main>
       <Footer />
