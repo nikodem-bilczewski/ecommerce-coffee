@@ -12,13 +12,13 @@ Main features:
 - sending email with confirmation after joining newsletter
 
 
-
 ## Technologies 🔧
 
 - React
 - TypeScript
 - React Query
 - React Router
+- React Hook Form
 - Tailwind
 - Strapi
 - Zod
